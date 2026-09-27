@@ -27,7 +27,7 @@ except Exception as e:
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 st.title("📦 Food Distribution Tracker")
 st.header("Food 4 All")
-st.text("This is a centralised databased aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
+st.text("Welcome! This is a centralised database aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
 
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
