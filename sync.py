@@ -32,7 +32,7 @@ def data_to_db():
     all_rows = spreadsheet.get_all_records()
 
     # 2. Creation of Database
-    storage = FileStorage('Data.fs')
+    storage = FileStorage('Data.fs', read_only = True)
     db = DB(storage)
     connection = db.open()
     db_root = connection.root()
