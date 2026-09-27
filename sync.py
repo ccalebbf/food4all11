@@ -36,10 +36,7 @@ def data_to_db():
     db = DB(storage)
     connection = db.open()
     db_root = connection.root()
-
-    db_root['neighbourhood'] = pg
-    n = db_root['neighbourhood']
-
+    
     # 3. Populate Neighbourhood
     for row in all_rows:
     
@@ -48,10 +45,13 @@ def data_to_db():
 
         blocks_covered = [int(x.strip()) for x in row['Blocks Covered'].split(",")]
         
-        for block in n.blocks:
+        for block in pg.blocks:
             if block.block in blocks_covered:
                 new_dist = Distribution(row['Name of organisation'], row['Date of distribution'], row['Type of Food distributed'], row['Number of people catered to (estimate)'])
                 block.log_distribution(new_dist)
+
+    # 4. Updating Data.fs
+    db_root['neighbourhood'] = pg
 
     # 5. Committing Changes
     transaction.commit()
