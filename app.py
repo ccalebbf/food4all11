@@ -18,7 +18,7 @@ def load_db_data():
         st.error(f"Error accessing database: {e}")
         return None, None, None
 
-
+# -- Syncs Data --
 try:
     data_to_db()
 except Exception as e:
@@ -26,8 +26,7 @@ except Exception as e:
 
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 st.title("📦 Food Distribution Tracker")
-
-st.text("Welcome to Food 4 All!")
+st.header("Food 4 All")
 st.text("This is a centralised databased aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
 
 col1, col2, col3 = st.columns([1, 1, 1])
