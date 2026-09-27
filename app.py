@@ -13,4 +13,8 @@ st.text("This is a centralised databased aiming to coordinating food aid efforts
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
     st.image("images/food_dist_bags.jpeg", caption = "Food distributed at Block 106", width = 400)
-    st.link_button("Google Sheet of Distributions", 'https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/edit?resourcekey=&gid=1793904774#gid=1793904774')
+
+if st.button("Click Button"):
+    st.success("Nice Work!")
+
+st.link_button("Google Sheet of Distributions", 'https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/edit?resourcekey=&gid=1793904774#gid=1793904774')
