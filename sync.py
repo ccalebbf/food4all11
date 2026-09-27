@@ -35,7 +35,7 @@ def data_to_db():
     storage = FileStorage('Data.fs')
     db = DB(storage)
     connection = db.open()
-    db_root = connection.root()
+    #db_root = connection.root()
     
     # 3. Populate Neighbourhood
     for row in all_rows:
