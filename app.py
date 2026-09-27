@@ -18,7 +18,11 @@ def load_db_data():
         st.error(f"Error accessing database: {e}")
         return None, None, None
 
-load_db_data()
+try:
+    data_to_db()
+    st.success("Successful")
+except Exception as e:
+    st.error(f""Sync failed, {e}")
 
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 st.title("📦 Food Distribution Tracker")
