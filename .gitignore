@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Security / Secret Keys
+service_account.json
+*.json
+
+# ZODB Database Storage Files
+Data.fs
+Data.fs.*
