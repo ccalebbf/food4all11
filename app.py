@@ -37,7 +37,6 @@ with col2:
 connection, db, neighbourhood = load_db_data()
 
 if neighbourhood:
-    st.header(f"Estate: {neighbourhood.name}")
     for block in neighbourhood.blocks:
         st.text(f"{block}")
 
