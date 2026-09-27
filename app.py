@@ -38,6 +38,8 @@ connection, db, neighbourhood = load_db_data()
 if neighbourhood:
     for block in neighbourhood.blocks:
         st.text(f"{block}")
+        
+    st.table(data=neighbourhood.blocks, *, border=True, width="stretch", height="content", hide_index=None, hide_header=None)
 
 st.link_button("Log a Distribution!", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 st.link_button("Google Sheet of Distributions", 'https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/edit?resourcekey=&gid=1793904774#gid=1793904774')
