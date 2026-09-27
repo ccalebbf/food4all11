@@ -29,7 +29,7 @@ st.title("📦 Food Distribution Tracker")
 st.header("Food 4 All")
 st.text("Welcome! This is a centralised database aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
 
-st.menu_button("Records", ['Overall Neighbourhood', 'Recent Distributions', 'By Block'])
+action = st.menu_button("Records", ['Overall Neighbourhood', 'Recent Distributions', 'By Block'])
 
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
