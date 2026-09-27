@@ -18,7 +18,7 @@ def load_db_data():
         st.error(f"Error accessing database: {e}")
         return None, None, None
 
-data_to_db()
+load_db_data()
 
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 st.title("📦 Food Distribution Tracker")
