@@ -1,4 +1,5 @@
 import gspread
+import streamlit as st
 from ZODB import DB
 from ZODB.FileStorage import FileStorage
 import transaction
@@ -13,10 +14,20 @@ pearl_garden = {98: 460098, 99: 460099,
 
 pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
 
-def data_to_db():
+def get_gspread_client():
+    if "gcp_service_account" in st.secrets:
+        try:
+            creds_dict = dict(st.secrets["gcp_service_account"])
+            if "private_key" in creds_dict:
+                creds_dict["private_key"] = creds_dict["private_key"].replace("\\n", "\n")
+            return gspread.service_account_from_dict(creds_dict)
+        except Exception as e:
+            print(f"Failed to load, {e}")
+    return gspread.service_account(filename = 'food_for_all.json')
 
+def data_to_db():
     # 1. Google Sheet Data to Python
-    gc = gspread.service_account(filename = 'food_for_all.json')
+    gc = get_gspread_client()
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
     all_rows = spreadsheet.get_all_records()
 
