@@ -6,14 +6,6 @@ import transaction
 
 from models import Distribution, Block, Neighbourhood
 
-pearl_garden = {98: 460098, 99: 460099, 
-                100: 460100, 101: 460101, 
-                102: 460102, 103: 460103, 
-                104: 460104, 105: 460105, 
-                106: 460106}
-
-pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
-
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
         try:
@@ -26,6 +18,14 @@ def get_gspread_client():
     return gspread.service_account(filename = 'food_for_all.json')
 
 def data_to_db():
+    pearl_garden = {98: 460098, 99: 460099, 
+                100: 460100, 101: 460101, 
+                102: 460102, 103: 460103, 
+                104: 460104, 105: 460105, 
+                106: 460106}
+
+    pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
+
     # 1. Google Sheet Data to Python
     gc = get_gspread_client()
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
