@@ -9,4 +9,4 @@ st.text("Welcome to Food 4 All! This is a centralised databased aiming to coordi
 
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
-    st.image("images/food_dist_bags.jpeg", caption = "Food distributed at Block 106", width = 500)
+    st.image("images/food_dist_bags.jpeg", caption = "Food distributed at Block 106", width = 400)
