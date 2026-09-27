@@ -42,7 +42,9 @@ if neighbourhood:
 
 
 
-c1, c2, c3 = st.columns(3)
+l1, c1, c2, c3, r1 = st.columns([1, 2, 2, 2, 1])
+
+
 with c1:
     st.link_button("Log a Distribution!", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 with c2:
