@@ -27,7 +27,7 @@ except Exception as e:
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
 # -- Define Pages --
-home_page = st.Page("app.py", title = "Home", icon = '🏠', default = true)
+home_page = st.Page("app.py", title = "Home", icon = '🏠', default = True)
 pg_page = st.Page("pages/1_pg.py", title = "Pearl Garden Neighbourhood Records", icon = '🏘️')
 
 ## -- Page Navigator --
