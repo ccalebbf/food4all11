@@ -15,13 +15,6 @@ def load_db_data():
     except Exception as e:
         st.error(f"Error accessing database: {e}")
         return None, None, None
-    finally:
-        if connection:
-            connection.close()
-        if db:
-            db.close()
-        if storage:
-            storage.close()
 
 # -- Syncs Data --
 try:
