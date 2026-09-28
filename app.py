@@ -31,7 +31,7 @@ home_page = st.Page("app.py", title = "Home", icon = '🏠', default = True)
 pg_page = st.Page("pages/1_pg.py", title = "Pearl Garden Neighbourhood Records", icon = '🏘️')
 
 ## -- Page Navigator --
-nav = st.navigation({"Home": [home_page], "Pearl Garden Neighbourhood": [pg_page]})
+nav = st.navigation([home_page, pg_page])
 nav.run()
 
 st.header("Food 4 All")
