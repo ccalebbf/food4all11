@@ -32,13 +32,6 @@ col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
     st.image("images/food_dist_bags.jpeg", width = 400)
 
-connection, db, neighbourhood = load_db_data()
-
-if neighbourhood:
-    st.text("Overall Blocks Records")
-    for block in neighbourhood.blocks:
-        st.text(f"{block}")
-
 l1, c1, c2, c3, r1 = st.columns([1, 2, 2, 2, 1])
 
 with c1:
