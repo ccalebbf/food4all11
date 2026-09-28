@@ -12,7 +12,6 @@ class Distribution(Persistent):
     def __repr__(self):
         return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.type}, Number of People: {self.pax}]")
 
-
 class Block(Persistent):
     def __init__(self, block, postcode):
         self.block = block
