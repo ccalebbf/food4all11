@@ -6,7 +6,7 @@ st.text("Welcome! This is a centralised database aiming to coordinating food aid
 
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
-    st.image("images/dist_bags.jpeg", width = 1000)
+    st.image("images/dist_bags.jpeg", width = 'stretch')
 
 st.link_button("Log a Distribution!", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 
