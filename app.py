@@ -4,6 +4,7 @@ from ZODB.FileStorage import FileStorage
 
 from sync import data_to_db
 
+# -- Helper to load Database Data --
 def load_db_data():
     try:
         storage = FileStorage('Data.fs', read_only = True)
@@ -22,9 +23,17 @@ try:
 except Exception as e:
     st.error(f"Sync failed: {e}")
 
+# -- Defines Home Page --
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
-st.title("📦 Food Distribution Tracker")
-st.sidebar.success("Select a Page")
+
+# -- Define Pages --
+home_page = st.Page("app.py", title = "Home", icon = '🏠', default = true)
+pg_page = st.Page("pages/1_pg.py", title = "Pearl Garden Neighbourhood Records", icon = '🏘️')
+
+## -- Page Navigator --
+nav = st.navigation({"Home": home_page, "Pearl Garden Neighbourhood": pg_page})
+nav.run()
+
 st.header("Food 4 All")
 st.text("Welcome! This is a centralised database aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
 
