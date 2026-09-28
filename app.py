@@ -10,13 +10,18 @@ def load_db_data():
         db = DB(storage)
         connection = db.open()
         db_root = connection.root()
-
         neighbourhood = db_root.get('neighbourhood')
-
         return connection, db, neighbourhood
     except Exception as e:
         st.error(f"Error accessing database: {e}")
         return None, None, None
+    finally:
+        if connection:
+            connection.close()
+        if db:
+            db.close()
+        if storage:
+            storage.close()
 
 # -- Syncs Data --
 try:
