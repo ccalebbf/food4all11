@@ -11,9 +11,3 @@ with col2:
 st.link_button("Log a Distribution!", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 
 st.link_button("Google Sheet of Distributions", 'https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/edit?resourcekey=&gid=1793904774#gid=1793904774')
-
-if st.button("Refresh Latest Data"):
-    try:
-        data_to_db()
-    except Exception as e:
-        st.error(f"Sync failed: {e}")
