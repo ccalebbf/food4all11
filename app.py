@@ -17,6 +17,7 @@ def load_db_data():
         st.error(f"Error accessing database: {e}")
         return None, None, None
 
+# Change: Only Sync Data when new row is added?
 # -- Syncs Data --
 try:
     data_to_db()
