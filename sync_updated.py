@@ -86,4 +86,4 @@ def data_to_db(connection = None):
     transaction.commit()
     connection.sync()
 
-    print(f"[SYNC LOG] Sync complete. Added {added_count} new distribution(s).")
+    print(f"[SYNC LOG] Sync complete. Added new distribution(s).")
