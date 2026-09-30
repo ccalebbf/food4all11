@@ -26,3 +26,8 @@ indi_page = st.Page("pages/indiv.py", title = "Individual Block Records", icon =
 nav = st.navigation([home_page, pg_page, indi_page])
 nav.run()
 
+connection, db, _ = load_db_data()
+if connection:
+    connection.sync()
+    root = connection.root()
+    print("Keys currently stored in Data.fs root:", list(root.keys()))

@@ -41,6 +41,7 @@ def data_to_db(connection):
                 106: 460106}
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
+        
         transaction.commit()
         connection.sync()
     
