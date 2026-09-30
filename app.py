@@ -11,7 +11,7 @@ def load_db_data():
         db = DB(storage)
         connection = db.open()
         db_root = connection.root()
-        neighbourhood = db_root.get('neighbourhood')
+        neighbourhood = db_root.get('neighbourhoods')
         return connection, db, neighbourhood
     except Exception as e:
         st.error(f"Error accessing database: {e}")
