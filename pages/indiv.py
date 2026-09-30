@@ -2,7 +2,7 @@ import streamlit as st
 import transaction
 from app import data_to_db, load_db_data
 
-db, connection, neighbourhood = load_db_data()
+connection, db, neighbourhood = load_db_data()
 
 # Handles ZODB Syncs cleanly
 if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
