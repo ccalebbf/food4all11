@@ -7,7 +7,7 @@ from persistent.list import PersistentList
 
 import transaction
 
-from models import Distribution, Block, Neighbourhood
+from models_updated import Distribution, Block, Neighbourhood
 
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
@@ -20,9 +20,7 @@ def get_gspread_client():
             print(f"Failed to load, {e}")
     return gspread.service_account(filename = 'food_for_all.json')
 
-def data_to_db(connection):
-    if connection is None:
-        return
+def data_to_db():
 
     pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
@@ -36,15 +34,18 @@ def data_to_db(connection):
     all_rows = spreadsheet.get_all_records(numericise_ignore=['all'])
 
     # 2. Creation of Database
+    storage = FileStorage('Data.fs')
+    db = DB(storage)
+    connection = db.open()
     db_root = connection.root()
-    
+
     # 3. Updating Data
     if 'neighbourhood' not in db_root:
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         transaction.commit()
-    
-    n = db_root['neighbourhood']
+    else:
+        n = db_root['neighbourhood']
 
     # 4. Populate Neighbourhood
     for row in all_rows:
@@ -63,18 +64,11 @@ def data_to_db(connection):
                     new_dist = Distribution(row['Name of organisation'], row['Date of distribution'], row['Type of Food distributed'], row['Number of people catered to (estimate)'], row['Were the food distributed halal certified?'])
                     block.log_distribution(dist_id, new_dist)
 
-     # 5. Committing Changes
+    # 5. Committing Changes
     transaction.commit()
-    connection.sync()
+    connection.close()
+    db.close()
     print("Sync complete!")
 
 if __name__ == "__main__":
-    storage = FileStorage('Data.fs')
-    db = DB(storage)
-    cli_conn = db.open()
-
-    try:
-        data_to_db(cli_conn)
-    finally:
-        cli_conn.close()
-        db.close()
+    data_to_db()
