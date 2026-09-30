@@ -11,6 +11,8 @@ if connection:
     except Exception as e:
         st.warning(f"DB sync error: {e}")
 
+st.text(neighbourhood.blocks[1].distributions)
+
 if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
     st.warning("Synchronizing database connection...")
     if connection:
