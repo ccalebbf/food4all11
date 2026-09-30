@@ -30,24 +30,20 @@ def data_to_db(connection):
     if connection is None:
         return
 
-    pearl_garden = {98: 460098, 99: 460099, 
+    db_root = connection.root()
+
+    if 'neighbourhood' not in db_root or db_root.get('neighbourhood') is None:
+        pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
                 102: 460102, 103: 460103, 
                 104: 460104, 105: 460105, 
                 106: 460106}
-
-    st.sidebar.info("🔄 Running sync from Google Sheets...")
-
-    db_root = connection.root()
-
-    if 'neighbourhood' not in db_root or db_root['neighbourhood'] is None:
-        print("[SYNC LOG] 'neighbourhood' missing from db_root. Creating new instance...")
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         transaction.commit()
         connection.sync()
     
-    n = db_root['neighbourhood']
+    n = db_root.get('neighbourhood')
 
     try:
         all_rows = fetch_google_sheet_records()
