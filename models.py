@@ -50,7 +50,7 @@ class Block(Persistent):
             else:
                 self.latest_distribution = None
 
-        self._p_changed = True
+        #self._p_changed = True
 
         return removed_dist
            
