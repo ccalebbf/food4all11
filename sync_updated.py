@@ -47,15 +47,13 @@ def data_to_db(connection):
     
     n = db_root.get('neighbourhood')
 
-    #try:
-        #all_rows = fetch_google_sheet_records()
-        #print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
-    #except Exception as e:
-        #st.sidebar.error(f"❌ Sheet fetch error: {e}")
-        #print(f"[SYNC ERROR] Sheet fetch error: {e}")
-        #return
-
-    all_rows = fetch_google_sheet_records()
+    try:
+        all_rows = fetch_google_sheet_records()
+        print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
+    except Exception as e:
+        st.sidebar.error(f"❌ Sheet fetch error: {e}")
+        print(f"[SYNC ERROR] Sheet fetch error: {e}")
+        return
     
     for row in all_rows:
 
