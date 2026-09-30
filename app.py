@@ -13,7 +13,7 @@ if connection:
         connection.sync()
         neighbourhood = connection.root().get('neighbourhood')
     except Exception as e:
-        st.error(f"Sync failed: {e}")
+        st.error(f"Sync failed on startup: {e}")
 
 
 # -- Define Pages --
