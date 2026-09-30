@@ -44,6 +44,7 @@ def data_to_db(connection):
         
         connection.transaction_manager.commit()
         connection.sync()
+        print("[DIAGNOSTIC] Base Neighbourhood successfully committed!")
     
     n = db_root.get('neighbourhood')
 
@@ -74,6 +75,7 @@ def data_to_db(connection):
                                             row['Number of people catered to (estimate)'], 
                                             row['Were the food distributed halal certified?'])
                     block.log_distribution(dist_id, new_dist)
+                    print(f"[DIAGNOSTIC] Prepared distribution '{dist_id}' for Block {block.block}")
 
     transaction.commit()
     #connection.transaction_manager.commit()
