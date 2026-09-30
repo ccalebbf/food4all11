@@ -81,7 +81,6 @@ class Block(Persistent):
 
         return(f"[Block: {self.block}, Postal Code: {self.postcode}, Latest Distribution: {ld}, Days Since Latest Distribution: {self.time_since_last_distribution()}, Number of Previous Distributions: {pd}]")
 
-
 class Neighbourhood(Persistent):
     def __init__(self, name, blocks):
         self.name = name

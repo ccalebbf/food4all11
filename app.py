@@ -4,35 +4,19 @@ from ZODB.FileStorage import FileStorage
 
 from sync import data_to_db
 
-# -- Helper to get Database Connection --
-@st.cache_resource
-def get_db_connection():
+# -- Helper to load Database Data --
+def load_db_data():
     try:
         storage = FileStorage('Data.fs')
         db = DB(storage)
         connection = db.open()
-        return db, connection
-    except Exception as e:
-        st.error(f"Error accessing database: {e}")
-        return None, None
-
-# -- Helper to load Database Data --
-def load_db_data():
-    db, connection = get_db_connection()
-    if connection is None:
-        return None, None, None
-    try:
-        connection.sync()
         db_root = connection.root()
         neighbourhood = db_root.get('neighbourhood')
-        if neighbourhood is None:
-            conection.sync()
-            neighbourhood = db_root.get('neighbourhood')      
         return connection, db, neighbourhood
     except Exception as e:
-        st.error(f"Error reading from database: {e}")
-        return connection, db, None
-        
+        st.error(f"Error accessing database: {e}")
+        return None, None, None
+
 # -- Syncs Data --
 try:
     data_to_db()

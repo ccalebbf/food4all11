@@ -1,9 +1,8 @@
 import streamlit as st
-import transaction
 from app import data_to_db, load_db_data
 
 connection, db, neighbourhood = load_db_data()
-    
+
 st.title("Records of Individual Block")
 
 tab_labels = [f"Block {block.block}" for block in neighbourhood.blocks]
@@ -31,24 +30,17 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
             st.table(block_data, border="horizontal")
 
-        with st.popover("Remove a Distribution"):
+            with st.popover("Remove a Distribution"):
                 
-            removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
+                removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
 
-            if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
-                    
-                if removed_id.strip():
+                if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
+                    if removed_id.strip():
 
-                    res = block.rem_distribution(removed_id)
+                        res = block.rem_distribution(removed_id)
+                        if res is not None:
+                            st.success(f"Distribution {removed_id} removed")
+                        else:
+                            st.error("No such Distribution!")
 
-                    if res is not None:
-                        transaction.commit()
-                        connection.sync()
-                        st.success(f"Distribution {removed_id} removed")
                         st.rerun()
-
-                    else:
-                        st.error("No such Distribution!")
-
-                else:
-                    st.error("Please enter a valid Distribution ID!")
