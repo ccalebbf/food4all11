@@ -3,7 +3,7 @@ from db import load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
-st.text(db)
+st.text(neighbourhood)
 
 if neighbourhood:
 
