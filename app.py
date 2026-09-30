@@ -10,8 +10,7 @@ if connection:
     connection.sync()
     root = connection.root()
 
-for key in list(root.keys()):
-    st.text(key)
+st.text(list(root.keys()))
 
 #connection, db, neighbourhood = load_db_data()
 
