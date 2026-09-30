@@ -7,7 +7,7 @@ if neighbourhood:
 
     for block in neighbourhood.blocks:
         
-        sorted_distributions = dict(sorted(self.distributions.items(), key = lambda item: item[1].date))
+        sorted_distributions = dict(sorted(block.distributions.items(), key = lambda item: item[1].date))
 
         block_data = {
             "Distribution ID" : [key for key in sorted_distributions],
