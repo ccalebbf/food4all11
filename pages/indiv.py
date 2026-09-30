@@ -45,7 +45,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         transaction.commit()
                         connection.sync()
                         st.success(f"Distribution {removed_id} removed")
-                        st.rerun
+                        st.rerun()
 
                     else:
                         st.error("No such Distribution!")
