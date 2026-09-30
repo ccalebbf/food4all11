@@ -32,7 +32,7 @@ def load_db_data():
     except Exception as e:
         st.error(f"Error reading from database: {e}")
         return connection, db, None
-
+        
 # -- Syncs Data --
 try:
     data_to_db()
