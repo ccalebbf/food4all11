@@ -4,6 +4,13 @@ from app import data_to_db, load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
+if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
+    st.warning("Synchronizing database connection...")
+    if connection:
+        connection.sync()
+    st.rerun()
+    st.stop()
+    
 st.title("Records of Individual Block")
 
 tab_labels = [f"Block {block.block}" for block in neighbourhood.blocks]
