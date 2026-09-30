@@ -53,7 +53,7 @@ def data_to_db(connection):
     except Exception as e:
         st.sidebar.error(f"❌ Sheet fetch error: {e}")
         print(f"[SYNC ERROR] Sheet fetch error: {e}")
-        return
+        #return
 
     for row in all_rows:
 
