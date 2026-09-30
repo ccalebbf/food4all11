@@ -11,4 +11,5 @@ with col2:
 st.text("Log a Distribution Here!")
 st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 
+records = fetch_google_sheet_records()
 st.text("Headers found:", records[0].keys() if records else "Sheet is empty")
