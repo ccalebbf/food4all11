@@ -11,6 +11,20 @@ class Distribution(Persistent):
         self.type = type
         self.pax = pax
         self.isHalal = isHalal
+    
+    def __setstate__(self, state):
+        super().__setstate__(state)
+
+        if not hasattr(self, 'org'):
+            self.org = getattr(self, 'org', 'N/A')
+        if not hasattr(self, 'date'):
+            self.date = getattr(self, 'date', '')
+        if not hasattr(self, 'type'):
+            self.type = getattr(self, 'type', '')
+        if not hasattr(self, 'pax'):
+            self.pax = getattr(self, 'pax', 0)
+        if not hasattr(self, 'isHalal'):
+            self.pax = getattr(self, 'isHalal', 'N/A')
 
     def __repr__(self):
         return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.type}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal} ]")
@@ -22,6 +36,9 @@ class Block(Persistent):
         self.latest_distribution = None
         self.distributions = PersistentMapping()
         self.deleted_distributions = PersistentList()
+
+    def __setstate__(self, state):
+        super().__setstate__(state)
 
     def log_distribution(self, dist_id, distribution):
         
