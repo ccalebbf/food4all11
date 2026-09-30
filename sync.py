@@ -54,7 +54,7 @@ def data_to_db():
 
         dist_id = datetime.strptime(row['Timestamp'], "%m/%d/%Y %H:%M:%S").strftime("%y%m%d%H%M%S")
 
-        for block in n.blocks:
+        for block in pg.blocks:
             
             if block.block in blocks_covered:
                 
