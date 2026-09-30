@@ -7,6 +7,8 @@ from ZODB.FileStorage import FileStorage
 connection, db, neighbourhood = load_db_data()
 
 if neighbourhood:
+
+    st.title(f"Records of {neighbourhood.name}")
     
     for block in neighbourhood.blocks:
 
@@ -25,7 +27,7 @@ if neighbourhood:
 
         st.subheader("Days Since Latest Distribution")
 
-        st.text{f"{block.time_since_last_distribution()}}
+        st.text(f"{block.time_since_last_distribution()}")
 
         st.subheader("Number of Past Distributions")
 
