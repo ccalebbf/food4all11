@@ -7,7 +7,7 @@ from persistent.list import PersistentList
 
 import transaction
 
-from models_updated import Distribution, Block, Neighbourhood
+from models import Distribution, Block, Neighbourhood
 
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
@@ -29,8 +29,7 @@ def data_to_db():
                 106: 460106}
 
     # 1. Google Sheet Data to Python
-    #gc = get_gspread_client()
-    gc = gspread.service_account(filename = 'food_for_all.json')
+    gc = get_gspread_client()
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
     all_rows = spreadsheet.get_all_records(numericise_ignore=['all'])
 
