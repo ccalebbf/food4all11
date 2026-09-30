@@ -5,7 +5,6 @@ from ZODB.FileStorage import FileStorage
 
 from sync import data_to_db
 
-
 @st.cache_resource
 def get_db_connection():
     try:

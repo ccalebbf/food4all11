@@ -3,7 +3,7 @@ from app import data_to_db, load_db_data
 from ZODB import DB
 from ZODB.FileStorage import FileStorage
 
-connection, db, neighbourhood = load_db_data()
+db, connection, neighbourhood = load_db_data()
 
 if neighbourhood:
 
