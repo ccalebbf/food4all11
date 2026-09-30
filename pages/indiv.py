@@ -31,7 +31,8 @@ for tab, block in zip(tabs, neighbourhood.blocks):
             st.table(block_data, border="horizontal")
 
             with st.popover("Remove a Distribution"):
-                removed_id = st.text_input("Enter Distribution ID: ", key="remove_id_input")
+                removed_id = st.text_input("Enter Distribution ID: ", key="remove_id")
+                
                 if st.button("Confirm Removal", key="confirm_delete_btn"):
                     if removed_id.strip():
                         res = block.rem_distribution(removed_id)
