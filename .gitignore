@@ -224,3 +224,9 @@ service_account.json
 # ZODB Database Storage Files
 Data.fs
 Data.fs.*
+
+# ZODB runtime lock files
+*.lock
+*.tmp
+*.index
+*.old
