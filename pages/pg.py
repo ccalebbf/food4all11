@@ -4,8 +4,10 @@ from db import load_db_data
 connection, db, neighbourhood = load_db_data()
 
 if connection:
+    connection.sync()
+    
     try:
-        connection.sync()
+        db_root = connection.root()
         neighbourhood = connection.root().get('neighbourhood', None)
     except Exception as e:
         st.warning(f"DB sync error: {e}")
