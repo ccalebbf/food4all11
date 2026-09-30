@@ -9,8 +9,27 @@ connection, db, neighbourhood = load_db_data()
 st.header(f"Overall Records of {neighbourhood.name}")
 
 if neighbourhood:
+    
     for block in neighbourhood.blocks:
-        st.text(f"{block}")
+
+        # st.text(f"{block}") 
+
+        if block.latest_distribution is None:
+            ld = "No Record"
+            pd = 0
+        else:
+            ld = block.latest_distribution
+            pd = len(block.distributions) - 1
+
+        st.header(f"Block {block.block}")
+
+        st.subheader("Latest Distribution ")
+
+        st.text(f"{ld}")
+
+        st.subheader(f"Days Since Latest Distribution: {block.time_since_last_distribution()}")
+
+        st.subheader(f"Number of Past Distributions: {pd}")
 
 if st.button("Refresh Latest Data"):
     try:
