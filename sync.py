@@ -68,8 +68,6 @@ def data_to_db(connection):
      # 5. Committing Changes
     transaction.commit()
     connection.sync()
-    connection.close()
-    db.close()
     print("Sync complete!")
 
 if __name__ == "__main__":
