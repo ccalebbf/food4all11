@@ -21,15 +21,15 @@ if neighbourhood:
 
         st.header(f"Block {block.block}")
 
-        st.subheader("Latest Distribution ")
+        st.subheader("Latest Distribution 📦")
 
         st.text(f"{ld}")
 
-        st.subheader("Days Since Latest Distribution")
+        st.subheader("Days Since Latest Distribution 🗓️")
 
         st.text(f"{block.time_since_last_distribution()}")
 
-        st.subheader("Number of Past Distributions")
+        st.subheader("Number of Past Distributions 📖")
 
         st.text(f"{ld}")
 
