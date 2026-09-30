@@ -52,8 +52,8 @@ def data_to_db(connection = None):
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         transaction.commit()
-    else:
-        n = db_root['neighbourhood']
+    
+    n = db_root['neighbourhood']
 
     for row in all_rows:
 
