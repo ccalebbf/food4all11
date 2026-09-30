@@ -33,8 +33,8 @@ if neighbourhood:
 
         st.text(f"{ld}")
 
-if st.button("Refresh Latest Data"):
-    try:
-        data_to_db()
-    except Exception as e:
-        st.error(f"Sync failed: {e}")
+#if st.button("Refresh Latest Data"):
+    #try:
+        #data_to_db()
+    #except Exception as e:
+        #st.error(f"Sync failed: {e}")

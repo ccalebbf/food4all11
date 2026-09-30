@@ -4,6 +4,7 @@ from app import data_to_db, load_db_data
 connection, db, neighbourhood = load_db_data()
 
 if neighbourhood:
+    
     for block in neighbourhood:
         
         sorted_distributions = dict(sorted(self.distributions.items(), key = lambda item: item[1].date))
