@@ -33,5 +33,5 @@ indiv_page = st.Page("pages/indiv_blocks.py", title = "Individual Block Records"
 indi_page = st.Page("pages/indiv.py", title = "Individual Block Records", icon = "🏡")
 
 ## -- Page Navigator --
-nav = st.navigation([home_page, pg_page, indiv_page])
+nav = st.navigation([home_page, pg_page, indiv_page, indi_page])
 nav.run()
