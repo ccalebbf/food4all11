@@ -6,4 +6,8 @@ connection, db, neighbourhood = load_db_data()
 
 #selected_view = st.radio("Navigation", ["View A", "View B", "View C"])
 
-selected = option_menu(menu_title = "Pick a Block", options = [block.block for block in neighbourhood.blocks])
+tab_labels = [f"Block {block.block}" for block in neighbourhood.blocks]
+
+tabs = st.tabs(tab_labels)
+
+#for tab, block in zip(tabs, neighbourhood.blocks):
