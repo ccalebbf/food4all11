@@ -33,17 +33,16 @@ def load_db_data():
         st.error(f"Error reading from database: {e}")
         return connection, db, None
 
-# -- Syncs Data --
+# -- Defines Home Page --
+st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
+# -- Syncs Data --
 connection, db, neighbourhood = load_db_data()
 if connection:
     try:
         data_to_db(connection)
     except Exception as e:
         st.error(f"Sync failed: {e}")
-
-# -- Defines Home Page --
-st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
 # -- Define Pages --
 home_page = st.Page("pages/home.py", title = "Home", icon = '🏠', default = True)
