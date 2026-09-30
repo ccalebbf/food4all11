@@ -39,13 +39,16 @@ def data_to_db():
     connection = db.open()
     db_root = connection.root()
 
+    db_root['neighbourhood'] = pg
+    n = db_root['neighbourhood']
+
     # 3. Updating Data
-    if 'neighbourhood' not in db_root:
-        pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
-        db_root['neighbourhood'] = pg
-        transaction.commit()
-    else:
-        n = db_root['neighbourhood']
+    #if 'neighbourhood' not in db_root:
+        #pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
+        #db_root['neighbourhood'] = pg
+        #transaction.commit()
+    #else:
+        #n = db_root['neighbourhood']
 
     # 4. Populate Neighbourhood
     for row in all_rows:
