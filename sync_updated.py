@@ -26,34 +26,19 @@ def fetch_google_sheet_records():
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
     return spreadsheet.get_all_records(numericise_ignore=['all'])
 
-def data_to_db(connection = None):
-
+def data_to_db(connection):
     if connection is None:
-        connection, _, _ = load_db_data()
-
-    if connection is None:
-        st.sidebar.error("❌ Sync Error: No DB connection available.")
-        print("[SYNC ERROR] No DB connection available.")
         return
-
-    print("\n--- Starting sync.py data_to_db() ---")
-    st.sidebar.info("🔄 Running sync from Google Sheets...")
-
-    try:
-        all_rows = fetch_google_sheet_records()
-        print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
-    except Exception as e:
-        st.sidebar.error(f"❌ Sheet fetch error: {e}")
-        print(f"[SYNC ERROR] Sheet fetch error: {e}")
-        return
-
-    db_root = connection.root()
 
     pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
                 102: 460102, 103: 460103, 
                 104: 460104, 105: 460105, 
                 106: 460106}
+
+    st.sidebar.info("🔄 Running sync from Google Sheets...")
+
+    db_root = connection.root()
 
     if 'neighbourhood' not in db_root or db_root['neighbourhood'] is None:
         print("[SYNC LOG] 'neighbourhood' missing from db_root. Creating new instance...")
@@ -63,6 +48,14 @@ def data_to_db(connection = None):
         connection.sync()
     
     n = db_root['neighbourhood']
+
+    try:
+        all_rows = fetch_google_sheet_records()
+        print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
+    except Exception as e:
+        st.sidebar.error(f"❌ Sheet fetch error: {e}")
+        print(f"[SYNC ERROR] Sheet fetch error: {e}")
+        return
 
     for row in all_rows:
 
