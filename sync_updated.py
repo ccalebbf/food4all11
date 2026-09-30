@@ -75,8 +75,8 @@ def data_to_db(connection):
                                             row['Were the food distributed halal certified?'])
                     block.log_distribution(dist_id, new_dist)
 
-    transaction.commit()
-    #connection.transaction_manager.commit()
+    #transaction.commit()
+    connection.transaction_manager.commit()
     connection.sync()
 
     print(f"[SYNC LOG] Sync complete. Added new distribution(s).")
