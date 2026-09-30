@@ -40,12 +40,12 @@ def data_to_db():
     db_root = connection.root()
     
     # 3. Updating Data
-    #if 'neighbourhood' not in db_root:
-    pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
-    db_root['neighbourhood'] = pg
-        #transaction.commit()
-    #else:
-        #n = db_root['neighbourhood']
+    if 'neighbourhood' not in db_root:
+        pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
+        db_root['neighbourhood'] = pg
+        transaction.commit()
+    else:
+        n = db_root['neighbourhood']
 
     # 4. Populate Neighbourhood
     for row in all_rows:
@@ -54,7 +54,7 @@ def data_to_db():
 
         dist_id = datetime.strptime(row['Timestamp'], "%m/%d/%Y %H:%M:%S").strftime("%y%m%d%H%M%S")
 
-        for block in pg.blocks:
+        for block in n.blocks:
             
             if block.block in blocks_covered:
                 
