@@ -31,3 +31,4 @@ if neighbourhood:
         st.subheader("Number of Past Distributions 📖")
 
         st.text(f"{pd}")
+
