@@ -7,7 +7,7 @@ from sync import data_to_db
 # -- Helper to load Database Data --
 def load_db_data():
     try:
-        storage = FileStorage('Data.fs', read_only = True)
+        storage = FileStorage('Data.fs')
         db = DB(storage)
         connection = db.open()
         db_root = connection.root()
