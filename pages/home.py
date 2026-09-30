@@ -13,3 +13,6 @@ st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYw
 
 records = fetch_google_sheet_records()
 st.write("Headers found:", records[0].keys() if records else "Sheet is empty")
+
+for row in records:
+    st.write(row)
