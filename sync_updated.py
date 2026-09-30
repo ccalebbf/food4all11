@@ -42,7 +42,7 @@ def data_to_db(connection):
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         
-        transaction.commit()
+        connection.transaction_manager.commit()
         connection.sync()
     
     n = db_root.get('neighbourhood')
@@ -53,7 +53,7 @@ def data_to_db(connection):
     except Exception as e:
         st.sidebar.error(f"❌ Sheet fetch error: {e}")
         print(f"[SYNC ERROR] Sheet fetch error: {e}")
-        #return
+        return
 
     for row in all_rows:
 
