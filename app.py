@@ -37,12 +37,11 @@ def load_db_data():
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
 # -- Syncs Data --
-connection, db, neighbourhood = load_db_data()
-if connection:
-    try:
-        data_to_db(connection)
-    except Exception as e:
-        st.error(f"Sync failed: {e}")
+
+try:
+    data_to_db()
+except Exception as e:
+    st.error(f"Sync failed: {e}")
 
 # -- Define Pages --
 home_page = st.Page("pages/home.py", title = "Home", icon = '🏠', default = True)
