@@ -16,8 +16,6 @@ if neighbourhood:
     
     for block in neighbourhood.blocks:
         
-        st.text(block)
-        
         if block.latest_distribution is None:
             ld = "No Record"
             pd = 0
