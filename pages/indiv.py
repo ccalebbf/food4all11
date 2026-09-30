@@ -4,6 +4,14 @@ from app import data_to_db, load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
+# Handles ZODB Syncs cleanly
+if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
+    st.warning("Synchronizing database connection...")
+    if connection:
+        connection.sync()
+    st.rerun()
+    st.stop()
+
 st.title("Records of Individual Block")
 
 tab_labels = [f"Block {block.block}" for block in neighbourhood.blocks]
@@ -38,12 +46,14 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                 if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
                     
                     res = block.rem_distribution(removed_id)
+
                     if res is not None:
                         transaction.commit()
-                        connection.sync()
+                        if connection:
+                            connection.sync()           
                         st.success(f"Distribution {removed_id} removed")
                         st.rerun()
                     else:
-                        st.error("No such Distribution!")
+                        st.error(f"Error! Distribution {removed_id} not found.")
 
     
