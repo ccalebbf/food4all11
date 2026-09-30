@@ -3,8 +3,6 @@ from db import load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
-st.text(neighbourhood)
-
 if neighbourhood:
 
     st.title(f"Summary of {neighbourhood.name} Records")
