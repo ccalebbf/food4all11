@@ -38,7 +38,7 @@ def data_to_db():
     db = DB(storage)
     connection = db.open()
     db_root = connection.root()
-    
+
     # 3. Updating Data
     if 'neighbourhood' not in db_root:
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
