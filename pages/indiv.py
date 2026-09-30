@@ -1,6 +1,7 @@
 import streamlit as st
 import transaction
 from db import load_db_data
+from sync_updated import data_to_db
 
 connection, db, neighbourhood = load_db_data()
 
