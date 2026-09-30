@@ -3,13 +3,6 @@ from db import load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
-if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
-    st.warning("Synchronizing database connection...")
-    if connection:
-        connection.sync()
-    st.rerun()
-    st.stop()
-
 if neighbourhood:
 
     st.title(f"Summary of {neighbourhood.name} Records")
