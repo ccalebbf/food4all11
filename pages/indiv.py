@@ -1,4 +1,5 @@
 import streamlit as st
+import transaction
 from app import data_to_db, load_db_data
 
 connection, db, neighbourhood = load_db_data()
@@ -41,9 +42,13 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                     res = block.rem_distribution(removed_id)
 
                     if res is not None:
+                        transaction.commit()
+                        connection.sync()
                         st.success(f"Distribution {removed_id} removed")
-                        
+                        st.rerun
+
                     else:
                         st.error("No such Distribution!")
 
-                    st.rerun()
+                else:
+                    st.error("Please enter a valid Distribution ID!")

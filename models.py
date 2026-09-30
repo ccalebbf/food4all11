@@ -61,6 +61,8 @@ class Block(Persistent):
             else:
                 self.latest_distribution = None
 
+        self._p_changed = True
+        
         return removed_dist
            
     def time_since_last_distribution(self):
