@@ -7,7 +7,7 @@ from persistent.list import PersistentList
 
 import transaction
 
-from models_updated import Distribution, Block, Neighbourhood
+from models import Distribution, Block, Neighbourhood
 
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
