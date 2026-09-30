@@ -3,6 +3,13 @@ from db import load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
+if connection:
+    try:
+        connection.sync()
+        neighbourhood = connection.root().get('neighbourhood', None)
+    except Exception as e:
+        st.warning(f"DB sync error: {e}")
+
 if neighbourhood:
 
     st.title(f"Summary of {neighbourhood.name} Records")
