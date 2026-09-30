@@ -33,4 +33,3 @@ pg_page = st.Page("pages/pg.py", title = "Pearl Garden Neighbourhood Records", i
 ## -- Page Navigator --
 nav = st.navigation([home_page, pg_page])
 nav.run()
-

@@ -83,4 +83,3 @@ class Neighbourhood(Persistent):
         print(f"Blocks in {self.name}")
         for i in range(len(self.blocks)):
             print(self.blocks[i])
-
