@@ -36,9 +36,11 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
                 if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
                     if removed_id.strip():
+
                         res = block.rem_distribution(removed_id)
                         if res is not None:
                             st.success(f"Distribution {removed_id} removed")
-                            st.rerun
                         else:
                             st.error("No such Distribution!")
+
+                        st.rerun()
