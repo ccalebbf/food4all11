@@ -1,5 +1,3 @@
-from models import Distribution, Block, Neighbourhood
-
 import gspread
 import streamlit as st
 import transaction
@@ -9,6 +7,7 @@ from ZODB.FileStorage import FileStorage
 from persistent.list import PersistentList
 
 from db import load_db_data
+from models import Distribution, Block, Neighbourhood
 
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
@@ -76,7 +75,8 @@ def data_to_db(connection):
                                             row['Were the food distributed halal certified?'])
                     block.log_distribution(dist_id, new_dist)
 
-    connection.transaction_manager.commit()
+    transaction.commit()
+    #connection.transaction_manager.commit()
     connection.sync()
 
     print(f"[SYNC LOG] Sync complete. Added new distribution(s).")
