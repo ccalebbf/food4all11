@@ -9,7 +9,9 @@ connection, db, _ = load_db_data()
 if connection:
     connection.sync()
     root = connection.root()
-    print("Keys currently stored in Data.fs root:", list(root.keys()))
+
+for key in list(root.keys()):
+    st.text(key)
 
 #connection, db, neighbourhood = load_db_data()
 
