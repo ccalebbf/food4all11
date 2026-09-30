@@ -7,7 +7,7 @@ from ZODB.FileStorage import FileStorage
 from persistent.list import PersistentList
 
 from db import load_db_data
-import models
+from models import models.Distribution, models.Block, models.Neighbourhohod
 
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
