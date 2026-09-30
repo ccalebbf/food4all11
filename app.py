@@ -7,11 +7,11 @@ st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
 connection, db, neighbourhood = load_db_data()
 
-if connection:
-    try:
-        data_to_db(connection)
-    except Exception as e:
-        st.error(f"Sync failed: {e}")
+#if connection:
+try:
+    data_to_db(connection)
+except Exception as e:
+    st.error(f"Sync failed: {e}")
 
 
 # -- Define Pages --
