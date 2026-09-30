@@ -5,23 +5,16 @@ from sync_updated import data_to_db
 # -- Defines Home Page --
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
-connection, db, _ = load_db_data()
+connection, db, neighbourhood = load_db_data()
+
 if connection:
+    try:
+        data_to_db(connection)
+    except Exception as e:
+        st.error(f"Sync failed on startup: {e}")
+
     connection.sync()
-    root = connection.root()
-
-st.text(list(root.keys()))
-
-#connection, db, neighbourhood = load_db_data()
-
-#if connection:
-    #try:
-        #data_to_db(connection)
-    #except Exception as e:
-        #st.error(f"Sync failed on startup: {e}")
-
-    #connection.sync()
-    #neighbourhood = connection.root().get('neighbourhood', None)
+    neighbourhood = connection.root().get('neighbourhood', None)
 
 
 # -- Define Pages --
