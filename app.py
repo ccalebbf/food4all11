@@ -12,6 +12,7 @@ def get_db_connection():
         storage = FileStorage('Data.fs')
         db = DB(storage)
         connection = db.open()
+        return db, connection
     except Exception as e:
         st.error(f"Error opening database: {e}")
         return None, None
