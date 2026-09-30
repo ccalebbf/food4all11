@@ -1,7 +1,7 @@
 import streamlit as st
 from app import data_to_db, load_db_data
 
-st.title("🍚🍜🥬🥕🥦🫑 --- Food 4 All! --- 🌽🍎🍌🍊🍋🍞")
+st.title("Food 4 All! 🍚🍜🥬🥕🥦🫑🌽🍎🍌🍊🍋🍞")
 st.text("Welcome! This is a centralised database aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
 
 col1, col2, col3 = st.columns([1, 1, 1])
