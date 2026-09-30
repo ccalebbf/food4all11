@@ -3,7 +3,6 @@ from app import data_to_db, load_db_data
 from ZODB import DB
 from ZODB.FileStorage import FileStorage
 
-
 connection, db, neighbourhood = load_db_data()
 
 if neighbourhood:
@@ -32,9 +31,3 @@ if neighbourhood:
         st.subheader("Number of Past Distributions 📖")
 
         st.text(f"{pd}")
-
-#if st.button("Refresh Latest Data"):
-    #try:
-        #data_to_db()
-    #except Exception as e:
-        #st.error(f"Sync failed: {e}")

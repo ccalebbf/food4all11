@@ -4,7 +4,7 @@ from ZODB.FileStorage import FileStorage
 
 from sync import data_to_db
 
-# -- Helper to get Database Data --
+# -- Helper to get Database Connection --
 @st.cache_resource
 def get_db_connection():
     try:
@@ -32,16 +32,15 @@ def load_db_data():
     except Exception as e:
         st.error(f"Error reading from database: {e}")
         return connection, db, None
-
-# -- Defines Home Page --
-st.set_page_config(page_title="Food Distribution Database", layout="wide")
-
+        
 # -- Syncs Data --
-
 try:
     data_to_db()
 except Exception as e:
     st.error(f"Sync failed: {e}")
+
+# -- Defines Home Page --
+st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
 # -- Define Pages --
 home_page = st.Page("pages/home.py", title = "Home", icon = '🏠', default = True)
