@@ -7,11 +7,11 @@ for block in neighbourhood:
     sorted_distributions = dict(sorted(self.distributions.items(), key = lambda item: item[1].date))
 
     block_data = {
-        "Distribution ID" : [key for key in sorted_distributions]
-        "Date" : [value.date for value in sorted_distributions.values()]
-        "Organisation" : [value.org for value in sorted_distributions.values()]
-        "Type" : [value.type for value in sorted_distributions.values()]
-        "Number of People (Approx.)" : [value.pax for value in sorted_distributions.values()]
+        "Distribution ID" : [key for key in sorted_distributions],
+        "Date" : [value.date for value in sorted_distributions.values()],
+        "Organisation" : [value.org for value in sorted_distributions.values()],
+        "Type" : [value.type for value in sorted_distributions.values()],
+        "Number of People (Approx.)" : [value.pax for value in sorted_distributions.values()],
         "Halal-Certified" : [value.isHalal for value in sorted_distributions.values()]
     }
 
