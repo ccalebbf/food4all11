@@ -10,7 +10,7 @@ if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
         connection.sync()
     st.rerun()
     st.stop()
-
+    
 st.title("Records of Individual Block")
 
 tab_labels = [f"Block {block.block}" for block in neighbourhood.blocks]
@@ -45,23 +45,17 @@ for tab, block in zip(tabs, neighbourhood.blocks):
             if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
                     
                 if removed_id.strip():
-                    try:
 
-                        res = block.rem_distribution(removed_id)
+                    res = block.rem_distribution(removed_id)
 
-                        if res is not None:
-                            transaction.commit()
-                            if connection:
-                                connection.sync()
-                            st.success(f"Distribution {removed_id} removed")
-                            st.rerun()
+                    if res is not None:
+                        transaction.commit()
+                        connection.sync()
+                        st.success(f"Distribution {removed_id} removed")
+                        st.rerun()
 
-                        else:
-                            st.error("No such Distribution!")
-                    except Exception as e:
-                        transaction.abort()
-                        if connection:
-                            connection.sync()
-                        st.error(f"Transaction failed: {e}")
+                    else:
+                        st.error("No such Distribution!")
+
                 else:
                     st.error("Please enter a valid Distribution ID!")
