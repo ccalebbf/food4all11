@@ -21,7 +21,7 @@ def load_db_data():
     try:
         connection.sync()
         db_root = connection.root()
-        neighbourhood = db_root.get('neighbourhood')
+        neighbourhood = db_root.get('neighbourhood', None)
         return connection, db, neighbourhood
     except Exception as e:
         st.error(f"Error reading database: {e}")

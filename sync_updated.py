@@ -55,11 +55,12 @@ def data_to_db(connection = None):
                 104: 460104, 105: 460105, 
                 106: 460106}
 
-    if 'neighbourhood' not in db_root:
+    if 'neighbourhood' not in db_root or db_root['neighbourhood'] is None:
         print("[SYNC LOG] 'neighbourhood' missing from db_root. Creating new instance...")
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         transaction.commit()
+        connection.sync()
     
     n = db_root['neighbourhood']
 
