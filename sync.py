@@ -72,3 +72,4 @@ def data_to_db():
 
 if __name__ == "__main__":
     data_to_db()
+

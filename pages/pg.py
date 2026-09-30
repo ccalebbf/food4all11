@@ -14,3 +14,4 @@ if st.button("Refresh Latest Data"):
         data_to_db()
     except Exception as e:
         st.error(f"Sync failed: {e}")
+        
