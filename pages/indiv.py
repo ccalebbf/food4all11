@@ -58,7 +58,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
                         else:
                             st.error("No such Distribution!")
-                    except Exception as {e}:
+                    except Exception as e:
                         transaction.abort()
                         if connection:
                             connection.sync()
