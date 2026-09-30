@@ -39,7 +39,7 @@ def data_to_db():
     connection = db.open()
     db_root = connection.root()
 
-    db_root['neighbourhood'] = pg
+    db_root['neighbourhood'] = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
     n = db_root['neighbourhood']
 
     # 3. Updating Data
