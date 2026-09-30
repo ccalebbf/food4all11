@@ -10,10 +10,11 @@ connection, db, neighbourhood = load_db_data()
 if connection:
     try:
         data_to_db(connection)
-        connection.sync()
-        neighbourhood = connection.root().get('neighbourhood')
     except Exception as e:
         st.error(f"Sync failed on startup: {e}")
+
+    connection.sync()
+    neighbourhood = connection.root().get('neighbourhood', None)
 
 
 # -- Define Pages --
