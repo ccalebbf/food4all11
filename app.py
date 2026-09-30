@@ -15,11 +15,14 @@ def load_db_data():
         return connection, db, neighbourhood
     except Exception as e:
         st.error(f"Error accessing database: {e}")
-        return None, None, None
+        retur
+    
+# -- Load Data --
+connection, db, neighbourhood = load_db_data()
 
 # -- Syncs Data --
 try:
-    data_to_db()
+    data_to_db(connection)
 except Exception as e:
     st.error(f"Sync failed: {e}")
 

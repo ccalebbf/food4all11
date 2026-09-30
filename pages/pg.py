@@ -14,6 +14,6 @@ if neighbourhood:
 
 if st.button("Refresh Latest Data"):
     try:
-        data_to_db()
+        data_to_db(connection)
     except Exception as e:
         st.error(f"Sync failed: {e}")
