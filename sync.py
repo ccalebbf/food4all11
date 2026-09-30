@@ -43,8 +43,8 @@ def data_to_db(connection):
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         transaction.commit()
-    else:
-        n = db_root['neighbourhood']
+    
+    n = db_root['neighbourhood']
 
     # 4. Populate Neighbourhood
     for row in all_rows:
@@ -69,4 +69,12 @@ def data_to_db(connection):
     print("Sync complete!")
 
 if __name__ == "__main__":
-    data_to_db()
+    storage = FileStorage('Data.fs')
+    db = DB(storage)
+    cli_conn = db.open()
+
+    try:
+        data_to_db(cli_conn)
+    finally:
+        cli_conn.close()
+        db.close()
