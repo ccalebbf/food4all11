@@ -8,7 +8,7 @@ def get_db():
     try:
         storage = FileStorage('Data.fs')
         db = DB(storage)
-        connection = db.open
+        connection = db.open()
         return db, connection
     except Exception as e:
         st.error(f"Failed to access Data.fs: {e}")
