@@ -42,6 +42,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
                     if res is not None:
                         st.success(f"Distribution {removed_id} removed")
+                        
                     else:
                         st.error("No such Distribution!")
 
