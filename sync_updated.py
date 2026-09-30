@@ -65,7 +65,7 @@ def data_to_db(connection):
             
             if block.block in blocks_covered:
                 
-                existing_ids = [d for d in block.distributions]
+                existing_ids = PersistentList(d for d in block.distributions)
 
                 if dist_id not in block.deleted_distributions and dist_id not in existing_ids:
                     new_dist = Distribution(row['Name of organisation'], 
