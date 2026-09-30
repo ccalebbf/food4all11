@@ -6,8 +6,6 @@ from ZODB.FileStorage import FileStorage
 
 connection, db, neighbourhood = load_db_data()
 
-st.title(f"Overall Records of {neighbourhood.name}")
-
 if neighbourhood:
     
     for block in neighbourhood.blocks:
