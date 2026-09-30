@@ -21,6 +21,8 @@ def get_gspread_client():
     return gspread.service_account(filename = 'food_for_all.json')
 
 def data_to_db(connection):
+    if connection is None:
+        return
 
     pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
