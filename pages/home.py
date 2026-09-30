@@ -8,6 +8,5 @@ col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
 
-
-st.header("Log a Distribution Here!")
+st.text("Log a Distribution Here!")
 st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
