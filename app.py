@@ -5,16 +5,22 @@ from sync_updated import data_to_db
 # -- Defines Home Page --
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
 
-connection, db, neighbourhood = load_db_data()
-
+connection, db, _ = load_db_data()
 if connection:
-    try:
-        data_to_db(connection)
-    except Exception as e:
-        st.error(f"Sync failed on startup: {e}")
-
     connection.sync()
-    neighbourhood = connection.root().get('neighbourhood', None)
+    root = connection.root()
+    print("Keys currently stored in Data.fs root:", list(root.keys()))
+
+#connection, db, neighbourhood = load_db_data()
+
+#if connection:
+    #try:
+        #data_to_db(connection)
+    #except Exception as e:
+        #st.error(f"Sync failed on startup: {e}")
+
+    #connection.sync()
+    #neighbourhood = connection.root().get('neighbourhood', None)
 
 
 # -- Define Pages --
@@ -25,9 +31,3 @@ indi_page = st.Page("pages/indiv.py", title = "Individual Block Records", icon =
 ## -- Page Navigator --
 nav = st.navigation([home_page, pg_page, indi_page])
 nav.run()
-
-connection, db, _ = load_db_data()
-if connection:
-    connection.sync()
-    root = connection.root()
-    print("Keys currently stored in Data.fs root:", list(root.keys()))
