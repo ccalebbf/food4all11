@@ -8,7 +8,7 @@ connection, db, neighbourhood = load_db_data()
 
 if neighbourhood:
 
-    st.title(f"Records of {neighbourhood.name}")
+    st.title(f"Summary of {neighbourhood.name} Records")
     
     for block in neighbourhood.blocks:
 
