@@ -1,5 +1,5 @@
 import streamlit as st
-from sync import data_to_db, load_db_data
+from app import data_to_db, load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
