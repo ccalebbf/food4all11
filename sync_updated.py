@@ -30,6 +30,8 @@ def data_to_db(connection):
     if connection is None:
         return
 
+    connection.sync() 
+    
     db_root = connection.root()
 
     if 'neighbourhood' not in db_root or db_root.get('neighbourhood') is None:
