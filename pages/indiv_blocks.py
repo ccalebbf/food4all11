@@ -6,9 +6,11 @@ connection, db, neighbourhood = load_db_data()
 if neighbourhood:
 
     for block in neighbourhood.blocks:
-        
+
         sorted_distributions = dict(sorted(block.distributions.items(), key = lambda item: item[1].date))
 
+        st.header(f"Block {block.block}")
+        
         block_data = {
             "Distribution ID" : [key for key in sorted_distributions],
             "Date" : [value.date for value in sorted_distributions.values()],
