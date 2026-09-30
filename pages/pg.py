@@ -31,7 +31,7 @@ if neighbourhood:
 
         st.subheader("Number of Past Distributions 📖")
 
-        st.text(f"{ld}")
+        st.text(f"{pd}")
 
 #if st.button("Refresh Latest Data"):
     #try:
