@@ -56,7 +56,7 @@ def data_to_db(connection):
         #return
 
     all_rows = fetch_google_sheet_records()
-
+    
     for row in all_rows:
 
         blocks_covered = [int(x.strip()) for x in row['Blocks Covered'].split(",")]
@@ -77,7 +77,7 @@ def data_to_db(connection):
                                             row['Were the food distributed halal certified?'])
                     block.log_distribution(dist_id, new_dist)
 
-    connection.transaction_manager.commit()
+    transaction.commit()
     connection.sync()
 
     print(f"[SYNC LOG] Sync complete. Added new distribution(s).")
