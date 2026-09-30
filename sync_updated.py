@@ -23,7 +23,7 @@ def get_gspread_client():
 @st.cache_data(ttl=300)
 def fetch_google_sheet_records():
     gc = get_gspread_client()
-    spreadsheet = gc.open("Food Distribution Logging Form (Responses)").worksheet("Form Responses 2")
+    spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
     return spreadsheet.get_all_records(numericise_ignore=['all'])
 
 def data_to_db(connection):
