@@ -32,12 +32,19 @@ def data_to_db(connection = None):
         connection, _, _ = load_db_data()
 
     if connection is None:
+        st.sidebar.error("❌ Sync Error: No DB connection available.")
+        print("[SYNC ERROR] No DB connection available.")
         return
+
+    print("\n--- Starting sync.py data_to_db() ---")
+    st.sidebar.info("🔄 Running sync from Google Sheets...")
 
     try:
         all_rows = fetch_google_sheet_records()
+        print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
     except Exception as e:
-        print(f"Sync skipped: {e}")
+        st.sidebar.error(f"❌ Sheet fetch error: {e}")
+        print(f"[SYNC ERROR] Sheet fetch error: {e}")
         return
 
     db_root = connection.root()
@@ -49,6 +56,7 @@ def data_to_db(connection = None):
                 106: 460106}
 
     if 'neighbourhood' not in db_root:
+        print("[SYNC LOG] 'neighbourhood' missing from db_root. Creating new instance...")
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         transaction.commit()
@@ -77,3 +85,5 @@ def data_to_db(connection = None):
 
     transaction.commit()
     connection.sync()
+
+    print(f"[SYNC LOG] Sync complete. Added {added_count} new distribution(s).")
