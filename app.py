@@ -12,14 +12,14 @@ def get_db_connection():
         storage = FileStorage('Data.fs')
         db = DB(storage)
         connection = db.open()
-        return db, connection
+        return connection, db
     except Exception as e:
         st.error(f"Error opening database: {e}")
         return None, None
 
 # -- Helper to load Database Data --
 def load_db_data():
-    db, connection = get_db_connection()
+    connection, db = get_db_connection()
     if connection is None:
         return None, None, None
     try:
