@@ -36,8 +36,6 @@ def data_to_db(connection):
     all_rows = spreadsheet.get_all_records(numericise_ignore=['all'])
 
     # 2. Creation of Database
-    storage = FileStorage('Data.fs')
-    db = DB(storage)
     db_root = connection.root()
     
     # 3. Updating Data
