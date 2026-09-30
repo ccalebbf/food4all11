@@ -7,7 +7,7 @@ from ZODB.FileStorage import FileStorage
 from persistent.list import PersistentList
 
 from db import load_db_data
-from models import Neighbourhood, Block, Distribution
+from models import Distribution, Block, Neighbourhood
 
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
@@ -47,7 +47,7 @@ def data_to_db(connection = None):
                 102: 460102, 103: 460103, 
                 104: 460104, 105: 460105, 
                 106: 460106}
-                
+
     if 'neighbourhood' not in db_root:
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
