@@ -49,3 +49,4 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                             st.rerun()
                         else:
                             st.error(f"Distribution {removed_id} does not Exist!")
+
