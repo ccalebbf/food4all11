@@ -3,16 +3,17 @@ from app import data_to_db, load_db_data
 
 connection, db, neighbourhood = load_db_data()
 
-#selected_view = st.radio("Navigation", ["View A", "View B", "View C"])
+st.title("Records of Individual Block")
 
 tab_labels = [f"Block {block.block}" for block in neighbourhood.blocks]
 
 tabs = st.tabs(tab_labels)
 
 for tab, block in zip(tabs, neighbourhood.blocks):
+    
     with tab:
         if neighbourhood:
-            
+
             sorted_distributions = dict(sorted(block.distributions.items(), key = lambda item: item[1].date))
 
             st.header(f"Block {block.block}")
