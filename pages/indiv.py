@@ -39,6 +39,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                 if removed_id.strip():
 
                     res = block.rem_distribution(int(removed_id))
+                    
                     if res is not None:
                         st.success(f"Distribution {removed_id} removed")
                     else:
