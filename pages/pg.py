@@ -6,13 +6,11 @@ from ZODB.FileStorage import FileStorage
 
 connection, db, neighbourhood = load_db_data()
 
-st.header(f"Overall Records of {neighbourhood.name}")
+st.title(f"Overall Records of {neighbourhood.name}")
 
 if neighbourhood:
     
     for block in neighbourhood.blocks:
-
-        # st.text(f"{block}") 
 
         if block.latest_distribution is None:
             ld = "No Record"
@@ -27,9 +25,13 @@ if neighbourhood:
 
         st.text(f"{ld}")
 
-        st.subheader(f"Days Since Latest Distribution: {block.time_since_last_distribution()}")
+        st.subheader("Days Since Latest Distribution")
 
-        st.subheader(f"Number of Past Distributions: {pd}")
+        st.text{f"{block.time_since_last_distribution()}}
+
+        st.subheader("Number of Past Distributions")
+
+        st.text(f"{ld}")
 
 if st.button("Refresh Latest Data"):
     try:
