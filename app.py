@@ -19,8 +19,7 @@ def load_db_data():
 
 # -- Syncs Data --
 try:
-    connection, db, neighbourhood = load_db_data()
-    data_to_db(connection)
+    data_to_db()
 except Exception as e:
     st.error(f"Sync failed: {e}")
 
