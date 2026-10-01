@@ -30,9 +30,9 @@ def data_to_db(connection):
     if connection is None:
         return
 
-    connection.sync() 
     db_root = connection.root()
-
+    connection.sync() 
+    
     if 'neighbourhood' not in db_root or db_root.get('neighbourhood') is None:
         pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
