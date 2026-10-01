@@ -42,8 +42,7 @@ def data_to_db(connection):
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         
-        transaction.commit()
-        #connection.transaction_manager.commit() FATAL LINE
+        connection.transaction_manager.commit()
         connection.sync()
         print("[DIAGNOSTIC] Base Neighbourhood successfully committed!")
     
