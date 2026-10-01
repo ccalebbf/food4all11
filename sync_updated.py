@@ -23,11 +23,9 @@ def get_gspread_client():
 @st.cache_data(ttl=300, show_spinner = False)
 def fetch_google_sheet_records():
     gc = get_gspread_client()
-    #spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
-    spreadsheet = gc.open("Food Distribution Logging Form (Responses)").worksheet("Deleted Distribution IDs")
-    #return spreadsheet.get_all_records(numericise_ignore=['all'])
-    return spreadsheet.get_all_records()
-    
+    spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
+    return spreadsheet.get_all_records(numericise_ignore=['all'])
+
 def data_to_db(connection):
     if connection is None:
         return
