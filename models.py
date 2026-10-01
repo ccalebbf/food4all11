@@ -5,7 +5,7 @@ from persistent.list import PersistentList
 from persistent.mapping import PersistentMapping
 
 class Distribution(Persistent):
-    #__module__ = 'models'
+    __module__ = 'models'
 
     def __init__(self, org, date, type, pax, isHalal):
         self.org = org
@@ -21,7 +21,7 @@ class Distribution(Persistent):
         return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.type}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
 
 class Block(Persistent):
-    #__module__ = 'models'
+    __module__ = 'models'
 
     def __init__(self, block, postcode):
         self.block = block
@@ -88,7 +88,7 @@ class Block(Persistent):
         return(f"[Block: {self.block}, Postal Code: {self.postcode}, Latest Distribution: {ld}, Days Since Latest Distribution: {self.time_since_last_distribution()}, Number of Previous Distributions: {pd}]")
 
 class Neighbourhood(Persistent):
-    #__module__ = 'models'
+    __module__ = 'models'
     
     def __init__(self, name, blocks):
         self.name = name
