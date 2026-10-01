@@ -56,7 +56,8 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         res = block.rem_distribution(removed_id)
 
                         if res is not None:
-                            transaction.commit()
+                            #transaction.commit()
+                            connection.transaction_manager.commit()
                             if connection:
                                 connection.sync()
                             st.success(f"Distribution {removed_id} removed")
