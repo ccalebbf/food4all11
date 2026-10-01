@@ -10,7 +10,7 @@ if connection:
     except Exception as e:
         st.warning(f"DB sync error: {e}")
 
-st.text(Distribution('Haha', '26-07-25', 'Dry', 100, 'yES'))
+st.text(Distribution('Haha', '2026-07-25', 'Dry', 100, 'yES'))
 if neighbourhood:
 
     st.title(f"Summary of {neighbourhood.name} Records")
