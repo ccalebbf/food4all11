@@ -35,6 +35,8 @@ class Block(Persistent):
 
         if (self.latest_distribution is None or distribution.date >= self.latest_distribution.date):
             self.latest_distribution = distribution
+        
+        self._p_changed = True
 
     def rem_distribution(self, dist_id):
 
@@ -50,7 +52,7 @@ class Block(Persistent):
             else:
                 self.latest_distribution = None
 
-        #self._p_changed = True
+        self._p_changed = True
 
         return removed_dist
            
