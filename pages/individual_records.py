@@ -45,23 +45,23 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
             st.table(block_data, border="horizontal")
 
-            with st.popover("Remove a Distribution"):
+        with st.popover("Remove a Distribution"):
                 
-                removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
+            removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
 
-                if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
+            if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
 
-                    if removed_id.strip():
+                if removed_id.strip():
 
-                        res = block.rem_distribution(removed_id)
+                    res = block.rem_distribution(removed_id)
 
-                        if res is not None:
-                            #transaction.commit()
-                            connection.transaction_manager.commit()
-                            #if connection:
-                            connection.sync()
-                            st.success(f"Distribution {removed_id} removed")
-                            st.rerun()
-                        else:
-                            st.error(f"Distribution {removed_id} does not Exist!")
+                    if res is not None:
+                        #transaction.commit()
+                        connection.transaction_manager.commit()
+                        #if connection:
+                        connection.sync()
+                        st.success(f"Distribution {removed_id} removed")
+                        st.rerun()
+                    else:
+                        st.error(f"Distribution {removed_id} does not Exist!")
 
