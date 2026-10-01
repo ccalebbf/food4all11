@@ -26,6 +26,8 @@ tabs = st.tabs(tab_labels)
 
 for tab, block in zip(tabs, neighbourhood.blocks):
     
+    st.text(block)
+    
     with tab:
 
         if neighbourhood:
