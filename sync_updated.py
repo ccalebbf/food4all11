@@ -58,9 +58,9 @@ def data_to_db(connection):
     
     for row in all_rows:
 
-        blocks_covered = [int(x.strip()) for x in row['Blocks Covered'].split(",")]
+        blocks_covered = [int(x.strip()) for x in row["Blocks Covered"].split(",")]
 
-        dist_id = datetime.strptime(row['Timestamp'], "%m/%d/%Y %H:%M:%S").strftime("%y%m%d%H%M%S")
+        dist_id = datetime.strptime(row["Timestamp"], "%m/%d/%Y %H:%M:%S").strftime("%y%m%d%H%M%S")
 
         for block in n.blocks:
             
@@ -69,11 +69,11 @@ def data_to_db(connection):
                 existing_ids = PersistentList(d for d in block.distributions)
 
                 if dist_id not in block.deleted_distributions and dist_id not in existing_ids:
-                    new_dist = Distribution(row['Name of organisation'], 
-                                            row['Date of distribution'], 
-                                            row['Type of Food distributed'], 
-                                            row['Number of people catered to (estimate)'], 
-                                            row['Were the food distributed halal certified?'])
+                    new_dist = Distribution(row["Name of organisation"], 
+                                            row["Date of distribution"], 
+                                            row["Type of Food distributed"], 
+                                            row["Number of people catered to (estimate)"], 
+                                            row["Were the food distributed halal certified?"])
                     block.log_distribution(dist_id, new_dist)
                     print(f"[DIAGNOSTIC] Prepared distribution '{dist_id}' for Block {block.block}")
 
