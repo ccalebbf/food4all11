@@ -20,7 +20,7 @@ def get_gspread_client():
             print(f"Failed to load, {e}")
     return gspread.service_account(filename = 'food_for_all.json')
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=300, show_spinner = False)
 def fetch_google_sheet_records():
     gc = get_gspread_client()
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)").sheet1
