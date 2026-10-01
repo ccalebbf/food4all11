@@ -1,6 +1,6 @@
 import streamlit as st
 from db import load_db_data
-from
+from models import Distribution
 connection, db, neighbourhood = load_db_data()
 
 if connection:
