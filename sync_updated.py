@@ -77,8 +77,8 @@ def data_to_db(connection):
                     block.log_distribution(dist_id, new_dist)
                     print(f"[DIAGNOSTIC] Prepared distribution '{dist_id}' for Block {block.block}")
 
-    #transaction.commit()
-    connection.transaction_manager.commit()
+    transaction.commit()
+    #connection.transaction_manager.commit()
     connection.sync()
 
     print(f"[SYNC LOG] Sync complete. Added new distribution(s).")
