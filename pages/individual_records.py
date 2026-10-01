@@ -59,7 +59,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                             #transaction.commit()
                             connection.transaction_manager.commit()
                             #if connection:
-                                connection.sync()
+                            connection.sync()
                             st.success(f"Distribution {removed_id} removed")
                             st.rerun()
                         else:
