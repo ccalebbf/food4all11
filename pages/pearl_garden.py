@@ -1,6 +1,6 @@
 import streamlit as st
 from db import load_db_data
-from models import Distribution
+
 connection, db, neighbourhood = load_db_data()
 
 if connection:
@@ -10,7 +10,6 @@ if connection:
     except Exception as e:
         st.warning(f"DB sync error: {e}")
 
-st.text(Distribution('Haha', '2026-07-25', 'Dry', 100, 'yES'))
 if neighbourhood:
 
     st.title(f"Summary of {neighbourhood.name} Records")
