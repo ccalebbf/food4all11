@@ -1,6 +1,7 @@
 import streamlit as st
 from db import load_db_data
-from sync_updated import data_to_db
+#from sync_updated import data_to_db
+from sync import data_to_db
 
 # -- Defines Home Page --
 st.set_page_config(page_title="Food Distribution Database", layout="wide")
