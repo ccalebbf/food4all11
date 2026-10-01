@@ -1,5 +1,6 @@
 import streamlit as st
 from db import load_db_data
+from models import Distribution, Block, Neighbourhood
 
 connection, db, neighbourhood = load_db_data()
 
