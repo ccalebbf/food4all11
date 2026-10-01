@@ -32,7 +32,7 @@ def data_to_db(connection):
 
     db_root = connection.root()
     connection.sync() 
-    
+
     if 'neighbourhood' not in db_root or db_root.get('neighbourhood') is None:
         pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
@@ -43,7 +43,7 @@ def data_to_db(connection):
         db_root['neighbourhood'] = pg
         
         transaction.commit()
-        
+    
         #connection.transaction_manager.commit()
         connection.sync()
         print("[DIAGNOSTIC] Base Neighbourhood successfully committed!")

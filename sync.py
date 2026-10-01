@@ -20,7 +20,7 @@ def get_gspread_client():
             print(f"Failed to load, {e}")
     return gspread.service_account(filename = 'food_for_all.json')
 
-def data_to_db():
+def data_to_db(connection):
 
     pearl_garden = {98: 460098, 99: 460099, 
                 100: 460100, 101: 460101, 
@@ -34,9 +34,6 @@ def data_to_db():
     all_rows = spreadsheet.get_all_records(numericise_ignore=['all'])
 
     # 2. Creation of Database
-    storage = FileStorage('Data.fs')
-    db = DB(storage)
-    connection = db.open()
     db_root = connection.root()
 
     # 3. Updating Data
