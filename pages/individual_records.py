@@ -60,8 +60,8 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         connection.transaction_manager.commit()
                         #if connection:
                         connection.sync()
-                        st.success(f"Distribution {removed_id} removed")
+                        st.success(f"Distribution {removed_id} removed!")
                         st.rerun()
                     else:
-                        st.error(f"Distribution {removed_id} does not Exist!")
+                        st.error(f"Distribution ID {removed_id} does not exist!")
 
