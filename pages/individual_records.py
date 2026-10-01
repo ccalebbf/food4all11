@@ -63,5 +63,5 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         st.success(f"Distribution {removed_id} removed!")
                         st.rerun()
                     else:
-                        st.error(f"Distribution (ID {removed_id}) does not exist!")
+                        st.error(f"Distribution (ID: {removed_id}) does not exist!")
 
