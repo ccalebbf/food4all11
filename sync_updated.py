@@ -42,7 +42,8 @@ def data_to_db(connection):
         pg = Neighbourhood('Pearl Garden', [Block(key, pearl_garden[key]) for key in pearl_garden])
         db_root['neighbourhood'] = pg
         
-        connection.transaction_manager.commit()
+        transaction.commit()
+        #connection.transaction_manager.commit() FATAL LINE
         connection.sync()
         print("[DIAGNOSTIC] Base Neighbourhood successfully committed!")
     
@@ -77,8 +78,8 @@ def data_to_db(connection):
                     block.log_distribution(dist_id, new_dist)
                     print(f"[DIAGNOSTIC] Prepared distribution '{dist_id}' for Block {block.block}")
 
-    transaction.commit()
-    #connection.transaction_manager.commit()
+    #transaction.commit()
+    connection.transaction_manager.commit()
     connection.sync()
 
     print(f"[SYNC LOG] Sync complete. Added new distribution(s).")
