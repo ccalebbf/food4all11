@@ -10,6 +10,12 @@ def data_to_db(neighbourhood, blocks):
     
     gc = get_gspread_client()
 
+    for block in n.blocks:
+
+        fetch_deletion_records(block, block.deleted_distributions)
+
+        time.sleep(1)
+
     try:
         all_rows = fetch_distribution_records(gc)
         print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
