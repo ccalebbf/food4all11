@@ -12,7 +12,8 @@ with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
 
 st.header("Pearl Garden Neighbourhood Records")
-with col2:
+c1, c2, c3 = st.columns([1, 5, 1])
+with c2:
     m = create_pg_map()
     st_data = st_folium(m, width=800, height=550, returned_objects = [])
 
