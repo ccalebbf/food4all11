@@ -13,7 +13,7 @@ with col2:
 
 st.subheader("Pearl Garden Neighbourhood Records")
 
-st.text("Colour corresponds to when the last distribution was made")
+st.text("Colour Legend corresponds to when the last distribution was made.")
 
 cols = st.columns(5)
 
