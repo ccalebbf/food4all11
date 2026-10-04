@@ -2,6 +2,7 @@
 
 import folium
 from streamlit_folium import st_folium
+from sync_updated import data_to_db
 
 # -- helper that converts days since last distribution to colour visualised on map --
 # Purple - no record
