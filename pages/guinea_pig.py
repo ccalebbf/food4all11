@@ -25,7 +25,7 @@ if neighbourhood:
                       popup = f"Block {block.block}", 
                       tooltip = f"Block {block.block}",
                       icon = folium.Icon(color = time_to_colour(block.time_since_last_distribution())
-                                        icon = 'info-sign')
+                                        , icon = 'info-sign')
                     ).add_to(m)
 
 st_data = st_folium(m, width=800, height=550, returned_objects = [])
