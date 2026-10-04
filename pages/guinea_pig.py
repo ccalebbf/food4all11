@@ -22,4 +22,4 @@ if neighbourhood:
     for block in neighbourhood.blocks:
         folium.Marker(block.coordinates, popup = f"Block {block.block}", tooltip = f"Block {block.block}").add_to(m)
 
-st_data = st_folium(m, width=800, height=550)
+st_data = st_folium(m, width=800, height=550, returned_objects = [])
