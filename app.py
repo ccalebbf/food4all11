@@ -1,4 +1,5 @@
 import streamlit as st
+from google_sheets import add_deletion_records
 from sync_updated import data_to_db
 
 pearl_garden = {98: 460098, 99: 460099, 

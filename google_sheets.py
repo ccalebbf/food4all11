@@ -25,7 +25,8 @@ def fetch_distribution_records(_gc):
 # Helper to retrieve deleted Distribution IDs (Failsafe for site reboots)
     # block - block to obtain deleted records for
     # del_dists - each block's unique PersistentList of deleted IDs
-def fetch_deletion_records(gc, block, del_dists):
+def fetch_deletion_records(block, del_dists):
+    gc = get_gspread_client()
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)")
     deletion_records = spreadsheet.worksheet("DeletedIDs") 
 
@@ -41,7 +42,8 @@ def fetch_deletion_records(gc, block, del_dists):
 # Helper to add deleted Distribution IDs to Google Sheet (Failsafe for site reboots)
     # block - block in which distribution is deleted
     # dist-id - id of deleted distribution
-def add_deletion_records(gc, block, dist_id):
+def add_deletion_records(block, dist_id):
+    gc = get_gspread_client()
     spreadsheet = gc.open("Food Distribution Logging Form (Responses)")
     deletion_records = spreadsheet.worksheet("DeletedIDs") 
 
