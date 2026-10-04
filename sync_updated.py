@@ -4,8 +4,6 @@ from datetime import datetime, date
 from models import Distribution, Block, Neighbourhood
 
 def data_to_db(neighbourhood, blocks):
-    if connection is None:
-        return
     
     pg = Neighbourhood(neighbourhood, blocks)
         
