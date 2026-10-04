@@ -11,11 +11,11 @@ def data_to_db(neighbourhood, blocks):
     
     gc = get_gspread_client()
 
-    for block in pg.blocks:
+    #for block in pg.blocks:
 
-        fetch_deletion_records(block, block.deleted_distributions)
+        #fetch_deletion_records(block, block.deleted_distributions)
 
-        time.sleep(1)
+        #time.sleep(1)
 
     try:
         all_rows = fetch_distribution_records(gc)
