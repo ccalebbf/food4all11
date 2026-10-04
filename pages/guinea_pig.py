@@ -29,7 +29,6 @@ if neighbourhood:
 
         folium.Marker(location = block.coordinates, 
                       popup = block_popup, 
-                      tooltip = f"Block {block.block}",
                       icon = folium.Icon(color = time_to_colour(block.time_since_last_distribution()), 
                                          icon = 'info-sign',
                                          icon_color = time_to_colour(block.time_since_last_distribution())
