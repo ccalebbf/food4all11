@@ -32,7 +32,7 @@ with cols[4]:
 
 st.write("")
 
-c1, c2, c3 = st.columns([1, 5, 1])
+c1, c2, c3 = st.columns([1, 6, 1])
 with c2:
     m = create_pg_map()
     st_data = st_folium(m, width=850, height=550, returned_objects = [])
