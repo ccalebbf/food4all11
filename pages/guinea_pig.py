@@ -1,6 +1,6 @@
 import streamlit as st
 import folium
-from folium plugins import MarkerCluster
+from folium.plugins import MarkerCluster
 from streamlit_folium import st_folium
 from sync_updated import data_to_db
 from map import time_to_colour
