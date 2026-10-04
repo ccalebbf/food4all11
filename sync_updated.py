@@ -6,7 +6,7 @@ from google_sheets import get_gspread_client, fetch_distribution_records
 
 def data_to_db(neighbourhood, blocks):
     
-    pg = Neighbourhood(neighbourhood, blocks)
+    pg = Neighbourhood(neighbourhood, [Block(key, blocks[key]) for key in blocks])
     
     gc = get_gspread_client()
 
