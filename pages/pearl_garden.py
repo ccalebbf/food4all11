@@ -1,3 +1,5 @@
+# -- Page for Summarised Pearl Garden neighbourhood records --
+
 import streamlit as st
 from sync_updated import data_to_db
 

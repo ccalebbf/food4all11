@@ -1,3 +1,5 @@
+# -- Page for Individual Block Records --
+
 import streamlit as st
 from google_sheets import get_gspread_client, add_deletion_records
 from sync_updated import data_to_db

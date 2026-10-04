@@ -1,3 +1,5 @@
+# -- File with all things related to syncing data --
+
 import gspread
 import streamlit as st
 import time

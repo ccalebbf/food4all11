@@ -1,3 +1,5 @@
+# -- Defines the building blocks of the database, with objects Distribution, Block, and Neighbourhood -- 
+
 from datetime import datetime, date
 from zoneinfo import ZoneInfo
 

@@ -1,3 +1,5 @@
+# -- Home Page --
+
 import streamlit as st
 
 st.title("Food 4 All! 🍚🍜🥬🥕🥦🫑🌽🍎🍌🍊🍋🍞")
