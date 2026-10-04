@@ -23,7 +23,7 @@ if neighbourhood:
 
     for block in neighbourhood.blocks:
 
-        popup_text = f"<b><u>Block {block.block}</u></b><br><b>Latest Distribution</b><br> {block.latest_distribution}<br><b>Days since Last Distribution</b><br> {block.time_since_last_distribution()}<br><b>Total Distributions</b><br> {len(block.distributions)}"
+        popup_text = f"<b><u>Block {block.block}</u></b><br><b>Latest Distribution</b><br> Date: {block.latest_distribution.date} <br> Organisation: {block.latest_distribution.org}  <br><b>Days since Last Distribution</b><br> {block.time_since_last_distribution()}<br><b>Total Distributions</b><br> {len(block.distributions)}"
 
         block_popup = folium.Popup(popup_text, max_width = 1000)
 
