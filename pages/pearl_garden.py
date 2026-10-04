@@ -19,6 +19,8 @@ if neighbourhood:
     
     for block in neighbourhood.blocks:
         
+        st.write(block.coordinates)
+        
         if block.latest_distribution is None:
             ld = "No Record"
             pd = 0
