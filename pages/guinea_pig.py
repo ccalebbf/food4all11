@@ -23,7 +23,7 @@ if neighbourhood:
 
     for block in neighbourhood.blocks:
 
-        popup_text = f"<b>Block {block.block}</b><br>Number of Days without distributions: {block.time_since_last_distribution()}<br>Total number of distributions: {len(block.distributions)}"
+        popup_text = f"<b>Block {block.block}</b><br>Days since last distribution: {block.time_since_last_distribution()}<br>Total distributions: {len(block.distributions)}"
 
         block_popup = folium.Popup(popup_text, min_width = 350, max_width = 350)
 
