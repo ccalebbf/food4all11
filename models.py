@@ -20,9 +20,10 @@ class Distribution():
 class Block():
     __module__ = 'models'
 
-    def __init__(self, block, postcode):
+    def __init__(self, block, postcode, coordinates):
         self.block = block
         self.postcode = postcode
+        self.coordinates = coordinates
         self.latest_distribution = None
         self.distributions = {}
         self.deleted_distributions = []
