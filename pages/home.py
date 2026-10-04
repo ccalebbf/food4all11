@@ -43,3 +43,6 @@ st.header("Log a Distribution Here!")
 st.text("Fill up this Google Form that will only take a minute!")
 st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 
+if st.sidebar.button("🔄 Fetch Fresh Data"):
+    st.cache_data.clear()
+    st.rerun()
