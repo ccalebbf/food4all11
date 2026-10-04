@@ -1,6 +1,7 @@
 # -- Home Page --
 
 import streamlit as st
+from map import create_pg_map
 
 st.title("Food 4 All! 🍚🍜🥬🥕🥦🫑🌽🍎🍌🍊🍋🍞")
 st.text("Welcome! This is a centralised database aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
@@ -8,6 +9,8 @@ st.text("Welcome! This is a centralised database aiming to coordinating food aid
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
+    m = create_pg_map()
+    st_data = st_folium(m, width=800, height=550, returned_objects = [])
 
 st.text("Log a Distribution Here!")
 st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
