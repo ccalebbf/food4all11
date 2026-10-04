@@ -1,7 +1,7 @@
 import streamlit as st
 import folium
-
 from streamlit_folium import st_folium
+from sync_updated import data_to_db
 
 # format of dict: for block in block, block no: [post_code, [latitude, longitude]]
 pearl_garden = {98: [460098, [1.33429725783725, 103.93986643128832]], 
