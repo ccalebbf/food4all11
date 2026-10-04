@@ -1,4 +1,5 @@
 import streamlit as st
+from google_sheets import add_deletion_records
 from sync_updated import data_to_db
 
 pearl_garden = {98: 460098, 99: 460099, 
@@ -47,6 +48,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                     res = block.rem_distribution(removed_id)
 
                     if res is not None:
+                        add_deletion_records(block, removed_id)
                         st.success(f"Distribution {removed_id} removed!")
                         st.rerun()
                     else:
