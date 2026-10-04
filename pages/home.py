@@ -12,6 +12,9 @@ with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
 
 st.header("Pearl Garden Neighbourhood Records")
+
+st.subheader("Legend")
+
 cols = st.columns(5)
 
 with cols[0]:
