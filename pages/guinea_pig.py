@@ -20,12 +20,12 @@ neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 m = folium.Map(location=[1.3338677218136072, 103.93803744309989], zoom_start = 17.5)
 
 if neighbourhood:
-    
+
     for block in neighbourhood.blocks:
 
         popup_text = f"<b>Block {block.block}</b><br>Number of Days without distributions: {block.time_since_last_distribution()}<br>Total number of distributions: {len(block.distributions)}"
 
-        block_popup = folium.Popup(popup_text, min_width = 300, max_width = 300)
+        block_popup = folium.Popup(popup_text, min_width = 350, max_width = 350)
 
         folium.Marker(location = block.coordinates, 
                       popup = block_popup, 
