@@ -1,10 +1,7 @@
 from datetime import datetime, date
 from zoneinfo import ZoneInfo
-from persistent import Persistent 
-from persistent.list import PersistentList
-from persistent.mapping import PersistentMapping
 
-class Distribution(Persistent):
+class Distribution():
     __module__ = 'models'
 
     def __init__(self, org, date, type, pax, isHalal):
@@ -20,15 +17,15 @@ class Distribution(Persistent):
     def __repr__(self):
         return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.type}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
 
-class Block(Persistent):
+class Block():
     __module__ = 'models'
 
     def __init__(self, block, postcode):
         self.block = block
         self.postcode = postcode
         self.latest_distribution = None
-        self.distributions = PersistentMapping()
-        self.deleted_distributions = PersistentList()
+        self.distributions = {}
+        self.deleted_distributions = []
 
     def __setstate__(self, state):
         super().__setstate__(state)
@@ -87,12 +84,12 @@ class Block(Persistent):
 
         return(f"[Block: {self.block}, Postal Code: {self.postcode}, Latest Distribution: {ld}, Days Since Latest Distribution: {self.time_since_last_distribution()}, Number of Previous Distributions: {pd}]")
 
-class Neighbourhood(Persistent):
+class Neighbourhood():
     __module__ = 'models'
     
     def __init__(self, name, blocks):
         self.name = name
-        self.blocks = PersistentList(blocks)
+        self.blocks = blocks
 
     def display_blocks(self):
         print(f"Blocks in {self.name}")
