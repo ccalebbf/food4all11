@@ -10,7 +10,7 @@ def data_to_db(neighbourhood, blocks):
     
     gc = get_gspread_client()
 
-    for block in n.blocks:
+    for block in pg.blocks:
 
         fetch_deletion_records(block, block.deleted_distributions)
 
