@@ -15,6 +15,7 @@ try:
 except Exception as e:
     st.error(f"Sync failed on startup: {e}")
 
+add_deletion_records(98, 6767)
 
 # -- Define Pages --
 home_page = st.Page("pages/home.py", title = "Home", icon = '🏠', default = True)
