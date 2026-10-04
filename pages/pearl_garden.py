@@ -1,6 +1,12 @@
 import streamlit as st
 from sync_updated import data_to_db
 
+pearl_garden = {98: 460098, 99: 460099, 
+                100: 460100, 101: 460101, 
+                102: 460102, 103: 460103, 
+                104: 460104, 105: 460105, 
+                106: 460106}
+                
 neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
 if neighbourhood:
