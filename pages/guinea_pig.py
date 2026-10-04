@@ -14,8 +14,12 @@ pearl_garden = {98: [460098, [1.33429725783725, 103.93986643128832]],
                 105: [460105, [1.3336370369014425, 103.93650855620973]], 
                 106: [460106, [1.334420029637709, 103.93705572684574]]}
 
+neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
 m = folium.Map(location=[1.3337764739823021, 103.93804277975775], zoom_start = 17.5)
 
+if neighbourhood:
+    for block in neighbourhood.blocks:
+        folium.Marker(block.coordinates, popup = f"Block {block.block}", tooltip = f"Block {block.block}").add_to(m)
 
 st_data = st_folium(m, width=800)
