@@ -6,7 +6,7 @@ pearl_garden = {98: 460098, 99: 460099,
                 102: 460102, 103: 460103, 
                 104: 460104, 105: 460105, 
                 106: 460106}
-                
+
 neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
 if neighbourhood:
@@ -36,3 +36,6 @@ if neighbourhood:
 
         st.text(f"{pd}")
 
+if st.sidebar.button("🔄 Fetch Fresh Data"):
+    st.cache_data.clear()
+    st.rerun()
