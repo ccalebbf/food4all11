@@ -16,7 +16,7 @@ pearl_garden = {98: [460098, [1.33429725783725, 103.93986643128832]],
 
 neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
-m = folium.Map(location=[1.3337764739823021, 103.93804277975775], zoom_start = 17.5)
+m = folium.Map(location=[1.3340982518310545, 103.93759216864574], zoom_start = 17.5)
 
 if neighbourhood:
     for block in neighbourhood.blocks:
