@@ -24,8 +24,8 @@ except Exception as e:
 home_page = st.Page("pages/home.py", title = "Home", icon = '🏠', default = True)
 #pg_page = st.Page("pages/pearl_garden.py", title = "Pearl Garden Neighbourhood Records", icon = '🏘️')
 indi_page = st.Page("pages/block_records.py", title = "Block Records", icon = "🏡")
-gp = st.Page("pages/guinea_pig.py", title = 'Print Debugging', icon = "🧪")
+#gp = st.Page("pages/guinea_pig.py", title = 'Print Debugging', icon = "🧪")
 
 ## -- Page Navigator --
-nav = st.navigation([home_page, indi_page, gp])
+nav = st.navigation([home_page, indi_page])
 nav.run()
