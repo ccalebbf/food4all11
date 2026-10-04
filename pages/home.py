@@ -13,7 +13,7 @@ with col2:
 
 st.header("Pearl Garden Neighbourhood Records")
 
-st.subheader("Legend")
+st.text("Legend")
 
 cols = st.columns(5)
 
