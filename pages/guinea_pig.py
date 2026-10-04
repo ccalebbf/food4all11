@@ -4,6 +4,7 @@ from streamlit_folium import st_folium
 from sync_updated import data_to_db
 from map import time_to_colour
 
+
 # format of dict: for block in block, block no: [post_code, [latitude, longitude]]
 pearl_garden = {98: [460098, [1.334225, 103.939826]], 
                 99: [460099, [1.333908, 103.939446]] , 
