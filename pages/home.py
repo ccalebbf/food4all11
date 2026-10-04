@@ -35,7 +35,7 @@ st.write("")
 c1, c2, c3 = st.columns([1, 5, 1])
 with c2:
     m = create_pg_map()
-    st_data = st_folium(m, width=800, height=550, returned_objects = [])
+    st_data = st_folium(m, width=850, height=550, returned_objects = [])
 
 st.subheader("Log a Distribution Here!")
 st.text("Fill up this Google Form that will only take a minute!")
