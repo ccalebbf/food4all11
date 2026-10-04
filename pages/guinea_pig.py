@@ -18,4 +18,4 @@ pearl_garden = {98: [460098, [1.33429725783725, 103.93986643128832]],
 m = folium.Map(location=[1.3337764739823021, 103.93804277975775], zoom_start = 17.5)
 
 
-st_data = st_folium(m, width=100)
+st_data = st_folium(m, width=800)
