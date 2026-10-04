@@ -1,14 +1,7 @@
 import streamlit as st
-from db import load_db_data
+from sync_updated import data_to_db
 
-connection, db, neighbourhood = load_db_data()
-
-if connection:
-    try:
-        connection.sync()
-        neighbourhood = connection.root().get('neighbourhood', None)
-    except Exception as e:
-        st.warning(f"DB sync error: {e}")
+neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
 if neighbourhood:
 

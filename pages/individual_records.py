@@ -1,22 +1,13 @@
 import streamlit as st
-import transaction
-from db import load_db_data
+from sync_updated import data_to_db
 
-connection, db, neighbourhood = load_db_data()
+pearl_garden = {98: 460098, 99: 460099, 
+                100: 460100, 101: 460101, 
+                102: 460102, 103: 460103, 
+                104: 460104, 105: 460105, 
+                106: 460106}
 
-if connection:
-    try:
-        connection.sync()
-        neighbourhood = connection.root().get('neighbourhood', None)
-    except Exception as e:
-        st.warning(f"DB sync error: {e}")
-
-if neighbourhood is None or not hasattr(neighbourhood, 'blocks'):
-    st.warning("Synchronizing database connection...")
-    if connection:
-        connection.sync()
-    st.rerun()
-    st.stop()
+neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
 st.title("Records of Individual Block")
 
