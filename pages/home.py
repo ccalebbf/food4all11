@@ -11,7 +11,7 @@ col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
 
-st.header("Pearl Garden Neighbourhood Records")
+st.subheader("Pearl Garden Neighbourhood Records")
 
 st.text("Legend")
 
@@ -39,7 +39,7 @@ with c2:
     m = create_pg_map()
     st_data = st_folium(m, width=800, height=550, returned_objects = [])
 
-st.header("Log a Distribution Here!")
+st.subheader("Log a Distribution Here!")
 st.text("Fill up this Google Form that will only take a minute!")
 st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 
