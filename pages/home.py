@@ -1,6 +1,7 @@
 # -- Home Page --
 
 import streamlit as st
+from streamlit_folium import st_folium
 from map import create_pg_map
 
 st.title("Food 4 All! 🍚🍜🥬🥕🥦🫑🌽🍎🍌🍊🍋🍞")
