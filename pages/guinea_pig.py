@@ -25,7 +25,7 @@ if neighbourhood:
 
         popup_text = f"<b>Block {block.block}</b><br>Days since last distribution: {block.time_since_last_distribution()}<br>Total distributions: {len(block.distributions)}"
 
-        block_popup = folium.Popup(popup_text, min_width = 350, max_width = 350)
+        block_popup = folium.Popup(popup_text, min_width = 300, max_width = 300)
 
         folium.Marker(location = block.coordinates, 
                       popup = block_popup, 
