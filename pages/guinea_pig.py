@@ -19,6 +19,8 @@ neighbourhood = data_to_db('Pearl Garden', pearl_garden)
 
 m = folium.Map(location=[1.3338677218136072, 103.93803744309989], zoom_start = 17.5)
 
+marker_cluster = MarkerCluster().add_to(m)
+
 if neighbourhood:
 
     for block in neighbourhood.blocks:
@@ -33,6 +35,6 @@ if neighbourhood:
                                          icon = 'info-sign',
                                          icon_color = time_to_colour(block.time_since_last_distribution())
                                         )
-                    ).add_to(m)
+                    ).add_to(marker_cluster)
 
 st_data = st_folium(m, width=800, height=550, returned_objects = [])
