@@ -22,7 +22,7 @@ m = folium.Map(location=[1.3338677218136072, 103.93803744309989], zoom_start = 1
 if neighbourhood:
     for block in neighbourhood.blocks:
         folium.Marker(location = block.coordinates, 
-                      popup = f"<b>Block {block.block}</b><br>", 
+                      popup = f"<b>Block {block.block}</b><br>Number of Days without distributions: {block.time_since_last_distribution()}<br>Total number of distributions: {len(block.distributions)}", 
                       tooltip = f"Block {block.block}",
                       icon = folium.Icon(color = time_to_colour(block.time_since_last_distribution()), 
                                          icon = 'info-sign',
