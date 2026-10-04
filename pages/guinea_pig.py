@@ -2,6 +2,7 @@ import streamlit as st
 import folium
 from streamlit_folium import st_folium
 from sync_updated import data_to_db
+from map import time_to_colour
 
 # format of dict: for block in block, block no: [post_code, [latitude, longitude]]
 pearl_garden = {98: [460098, [1.33429725783725, 103.93986643128832]], 
@@ -20,6 +21,11 @@ m = folium.Map(location=[1.3338677218136072, 103.93803744309989], zoom_start = 1
 
 if neighbourhood:
     for block in neighbourhood.blocks:
-        folium.Marker(block.coordinates, popup = f"Block {block.block}", tooltip = f"Block {block.block}").add_to(m)
+        folium.Marker(location = block.coordinates, 
+                      popup = f"Block {block.block}", 
+                      tooltip = f"Block {block.block}"
+                      icon = folium.Icon(color = time_to_colour(block.time_since_last_distribution())
+                                        icon = 'info-sign')
+                    ).add_to(m)
 
 st_data = st_folium(m, width=800, height=550, returned_objects = [])
