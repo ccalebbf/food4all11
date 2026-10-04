@@ -12,6 +12,25 @@ with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
 
 st.header("Pearl Garden Neighbourhood Records")
+cols = st.columns(5)
+
+with cols[0]:
+    st.markdown("🟣 **No Record**")
+
+with cols[1]:
+    st.markdown("🔵 **Within 1 week**")
+
+with cols[2]:
+    st.markdown("🟢 **Within 1 to 2 weeks**")
+
+with cols[3]:
+    st.markdown("🟠 **Within 2 to 4 weeks**")
+
+with cols[4]:
+    st.markdown("🔴 **Over 4 weeks**")
+
+st.write("")
+
 c1, c2, c3 = st.columns([1, 5, 1])
 with c2:
     m = create_pg_map()
