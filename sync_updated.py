@@ -2,14 +2,16 @@ import gspread
 import streamlit as st
 from datetime import datetime, date
 from models import Distribution, Block, Neighbourhood
-from google_sheets import fetch_distribution_records
+from google_sheets import get_gspread_client, fetch_distribution_records
 
 def data_to_db(neighbourhood, blocks):
     
     pg = Neighbourhood(neighbourhood, blocks)
-        
+    
+    gc = get_gspread_client()
+
     try:
-        all_rows = fetch_distribution_records()
+        all_rows = fetch_distribution_records(gc)
         print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
     except Exception as e:
         st.sidebar.error(f"❌ Sheet fetch error: {e}")
