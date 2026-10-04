@@ -15,6 +15,7 @@ st.header("Pearl Garden Neighbourhood Records")
 m = create_pg_map()
 st_data = st_folium(m, width=800, height=550, returned_objects = [])
 
-st.text("Log a Distribution Here!")
+st.header("Log a Distribution Here!")
+st.text("Fill up this Google Form that will only take a minute!")
 st.link_button("Google Form Link", 'https://docs.google.com/forms/d/1ROgMh8lEaYwNiOAIj8Bk-6-2HcLLsVgAtl5_oKXsQzA/')
 
