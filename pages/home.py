@@ -7,7 +7,7 @@ from map import create_pg_map
 st.title("Food 4 All! 🍚🍜🥬🥕🥦🫑🌽🍎🍌🍊🍋🍞")
 st.text("Welcome! This is a centralised database aiming to coordinating food aid efforts in the Pearl Garden neighbourhood (Bedok North Ave 4), with an aim to reduce food wastage and increase efficiency.")
 
-col1, col2, col3 = st.columns([1, 5, 1])
+col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
     st.image("images/dist_bags.jpeg", width = 'stretch')
 
