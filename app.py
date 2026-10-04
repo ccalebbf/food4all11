@@ -23,5 +23,5 @@ indi_page = st.Page("pages/block_records.py", title = "Block Records", icon = "ð
 gp = st.Page("pages/guinea_pig.py", title = 'Print Debugging', icon = "ðŸ§ª")
 
 ## -- Page Navigator --
-nav = st.navigation([home_page, pg_page, indi_page])
+nav = st.navigation([home_page, pg_page, indi_page, gp])
 nav.run()
