@@ -28,7 +28,7 @@ if neighbourhood:
         if not block.latest_distribution:
             block_popup = folium.Popup(popup_text, min_width = 310, max_width = 310)
         else:
-            block_popup = folium.Popup(popup_text, min_width = 240, max_width = 240)
+            block_popup = folium.Popup(popup_text, min_width = 230, max_width = 230)
 
         folium.Marker(location = block.coordinates, 
                       popup = block_popup, 
