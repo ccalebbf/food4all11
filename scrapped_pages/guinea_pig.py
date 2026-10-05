@@ -7,7 +7,7 @@ from map import time_to_colour
 
 st.markdown(
     """
-    <div style="background-color: #0066cc; color: white; padding: 15px; border-radius: 5px;">
+    <div style="background-color: #0066cc; color: white; padding: 15px; border-radius: 8px; width: 50%">
         <strong>Custom Block:</strong> This is a text block with a custom blue background and white text.
     </div>
     """,
