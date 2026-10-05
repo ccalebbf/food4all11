@@ -27,12 +27,9 @@ def data_to_db(neighbourhood, blocks):
         st.sidebar.error(f"❌ Sheet fetch error: {e}")
         print(f"[SYNC ERROR] Sheet fetch error: {e}")
         return
-    
-    for block in pg.blocks:
 
-        block.deleted_distributions = del_rows
         
-    for row in dist_rows:
+    for row in all_rows:
 
         blocks_covered = [int(x.strip()) for x in row["Blocks Covered"].split(",")]
 
