@@ -5,5 +5,8 @@ from sync_updated import data_to_db
 from map import time_to_colour
 
 
-st.markdown("This text has a :red[red colored word] inside it.")
-st.markdown(":blue[This entire sentence is blue.]")
+st.markdown(":purple[No Record]")
+st.markdown(":blue[Within 1 week]")
+st.markdown(":green[Between 1 to 2 weeks]")
+st.markdown(":orange[Between 2 to 4 weeks]")
+st.markdown(":red[Over 4 weeks]")
