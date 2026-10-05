@@ -18,7 +18,7 @@ def data_to_db(neighbourhood, blocks):
 
         block.deleted_distributions = fetch_deletion_records(gc, block.block)
 
-        #time.sleep(1)
+        time.sleep(0.5)
 
     try:
         all_rows = fetch_distribution_records(gc)
