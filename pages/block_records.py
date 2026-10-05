@@ -56,7 +56,6 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                     if res is not None:
                         st.success(f"Distribution {removed_id} removed!")
                         add_deletion_records(block.block, removed_id)
-                        sheets_clear_cache()
                         st.rerun()
                     else:
                         st.error(f"Distribution (ID: {removed_id}) does not exist!")
