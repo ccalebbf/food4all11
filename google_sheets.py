@@ -76,3 +76,7 @@ def add_deletion_records(block, dist_id):
         deletion_records.update_acell(cell_address, dist_id)
     except ValueError as e:
         print("Error: {e}")
+
+def sheets_clear_cache():
+    fetch_distribution_records.clear()
+    fetch_deletion_records.clear()
