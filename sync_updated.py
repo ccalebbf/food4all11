@@ -5,7 +5,7 @@ import streamlit as st
 import time
 from datetime import datetime, date
 from models import Distribution, Block, Neighbourhood
-from google_sheets import get_gspread_client, fetch_distribution_records, fetch_deletion_records, fetch_sheet_records
+from google_sheets import get_gspread_client, fetch_distribution_records, fetch_deletion_records
 
 @st.cache_data(ttl=30, show_spinner = False)
 def data_to_db(neighbourhood, blocks):
