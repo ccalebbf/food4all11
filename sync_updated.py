@@ -7,7 +7,7 @@ from datetime import datetime, date
 from models import Distribution, Block, Neighbourhood
 from google_sheets import get_gspread_client, fetch_distribution_records, fetch_deletion_records
 
-@st.cache_data(ttl=300, show_spinner = False)
+@st.cache_data(ttl=30, show_spinner = False)
 def data_to_db(neighbourhood, blocks):
     
     pg = Neighbourhood(neighbourhood, [Block(key, blocks[key][0], blocks[key][1]) for key in blocks])
