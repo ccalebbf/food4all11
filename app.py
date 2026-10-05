@@ -1,3 +1,4 @@
+# -- Main file that deals with Streamlit interacts with to process the web app --
 import streamlit as st
 from sync_updated import data_to_db
 
