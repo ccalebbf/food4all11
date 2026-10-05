@@ -21,7 +21,7 @@ def data_to_db(neighbourhood, blocks):
     #     time.sleep(0.5)
 
     try:
-        all_rows, pg = fetch_sheet_records(gc)
+        all_rows, pg = fetch_sheet_records(gc, pg)
         print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
     except Exception as e:
         st.sidebar.error(f"❌ Sheet fetch error: {e}")
