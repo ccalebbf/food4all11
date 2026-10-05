@@ -44,7 +44,9 @@ for tab, block in zip(tabs, neighbourhood.blocks):
             st.table(block_data, border="horizontal")
 
         with st.popover("Remove a Distribution"):
-                
+            
+            show_msg = False
+
             removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
 
             if st.button("Confirm Removal", key=f"confirm_delete_btn_{block.block}"):
@@ -58,10 +60,13 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         st.cache_data.clear()
                         data_to_db.clear()
                         st.rerun()
+                        show_msg = True
                     else:
                         st.error(f"Distribution (ID: {removed_id}) does not exist!")
-
-            st.success(f"Distribution {removed_id} removed!")
+                        
+            if show_msg:
+                st.success(f"Distribution {removed_id} removed!")
+                show_msg = False
 
 if st.sidebar.button("🔄 Fetch Fresh Data"):
     st.cache_data.clear()
