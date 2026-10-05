@@ -7,7 +7,7 @@ from map import time_to_colour
 
 st.markdown(
     """
-    <div style="background-color: #a30f9d; color: white; padding: 15px; border-radius: 8px;">
+    <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
         <strong>Within 1 week</strong>
     </div>
     """,
