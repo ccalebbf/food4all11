@@ -86,7 +86,7 @@ def add_deletion_records(block, dist_id):
 
             row = deletion_values[row_index_0]
 
-            if index_with_block_0 >= len(row) or row[index_with_block_0].strip():
+            if index_with_block_0 >= len(row) and row[index_with_block_0].strip():
                 first_empty_row = row_index_0 + 1 # Converting row to 1-based index
                 break
         
