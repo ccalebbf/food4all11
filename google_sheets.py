@@ -40,28 +40,29 @@ def fetch_deletion_records(_gc, block):
 
     return []
 
-# @st.cache_data(ttl=30, show_spinner = False)
-# def fetch_sheet_records(_gc, blocks):
-#     spreadsheet = _gc.open("Food Distribution Logging Form (Responses)")
-#     distributions_records = spreadsheet.worksheet("Form Responses 2") 
-#     deletion_records = spreadsheet.worksheet("DeletedIDs") 
+@st.cache_data(ttl=30, show_spinner = False)
+def fetch_sheet_records(_gc, neighbourhood):
+    spreadsheet = _gc.open("Food Distribution Logging Form (Responses)")
+    distributions_records = spreadsheet.worksheet("Form Responses 2") 
+    deletion_records = spreadsheet.worksheet("DeletedIDs") 
 
-#     for block in blocks:
-#     dist_records = distributions_records.get_all_records(numericise_ignore=['all'])
+    dist_records = distributions_records.get_all_records(numericise_ignore=['all'])
 
-#     header_cell = deletion_records.find(str(block), in_row = 1)
+    for block in neighbourhood.blocks:
 
-#     if header_cell:
-        
-#         col_values = deletion_records.col_values(header_cell.col)
+        header_cell = deletion_records.find(str(block.block), in_row = 1)
 
-#         del_records = [val for val in col_values[1:] if val.strip()]
+        if header_cell:
+            
+            col_values = deletion_records.col_values(header_cell.col)
 
-#     else:
+            block.deleted_distributions = [val for val in col_values[1:] if val.strip()]
 
-#         del_records = []
+        else:
 
-#     return dist_records, del_records
+            block.deleted_distributions = []
+
+    return dist_records, neighbourhood
 
 
 # Helper to add deleted Distribution IDs to Google Sheet (Failsafe for site reboots)
