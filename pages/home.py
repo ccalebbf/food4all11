@@ -13,13 +13,11 @@ with col2:
 
 st.subheader("Pearl Garden Neighbourhood Records")
 
-st.text("Legend (time since last distribution)")
+st.text("Colour indicates time since last distribution")
 
 cols = st.columns(5)
 
 with cols[0]:
-    #st.markdown("🟣 **No Record**")
-    #st.markdown(":violet[No Record]")
     st.markdown(
     """
     <div style="background-color: #c653b0; color: white; padding: 15px; border-radius: 8px;">
@@ -30,8 +28,6 @@ with cols[0]:
     )
 
 with cols[1]:
-    #st.markdown("🔵 **Within 1 week**")
-    #st.markdown(":blue[Within 1 week]")
     st.markdown(
     """
     <div style="background-color: #31a3dc; color: white; padding: 15px; border-radius: 8px;">
@@ -41,8 +37,6 @@ with cols[1]:
     unsafe_allow_html=True
     )
 with cols[2]:
-    #st.markdown("🟢 **Within 1 to 2 weeks**")
-    #st.markdown(":green[Between 1 to 2 weeks]")
     st.markdown(
     """
     <div style="background-color: #68a922; color: white; padding: 15px; border-radius: 8px;">
@@ -53,8 +47,6 @@ with cols[2]:
     )
 
 with cols[3]:
-    #st.markdown("🟠 **Within 2 to 4 weeks**")
-    #st.markdown(":orange[Between 2 to 4 weeks]")
     st.markdown(
     """
     <div style="background-color: #f48c28; color: white; padding: 15px; border-radius: 8px;">
@@ -65,8 +57,6 @@ with cols[3]:
     )
 
 with cols[4]:
-    #st.markdown("🔴 **Over 4 weeks**")
-    #st.markdown(":red[Over 4 weeks]")
     st.markdown(
     """
     <div style="background-color: #d63e2b; color: white; padding: 15px; border-radius: 8px;">
