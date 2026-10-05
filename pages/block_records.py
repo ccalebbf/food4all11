@@ -58,9 +58,10 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         st.cache_data.clear()
                         data_to_db.clear()
                         st.rerun()
-                        st.success(f"Distribution {removed_id} removed!")
                     else:
                         st.error(f"Distribution (ID: {removed_id}) does not exist!")
+
+            st.success(f"Distribution {removed_id} removed!")
 
 if st.sidebar.button("🔄 Fetch Fresh Data"):
     st.cache_data.clear()
