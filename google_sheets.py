@@ -74,8 +74,7 @@ def add_deletion_records(block, dist_id):
         cell_address = rowcol_to_a1(first_empty_row, index_with_block_1)
 
         deletion_records.update_acell(cell_address, dist_id)
-
-        sheets_clear_cache()
+        
     except ValueError as e:
         print("Error: {e}")
 
