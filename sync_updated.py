@@ -14,15 +14,14 @@ def data_to_db(neighbourhood, blocks):
     
     gc = get_gspread_client()
 
-    # for block in pg.blocks:
+    for block in pg.blocks:
 
-    #     block.deleted_distributions = fetch_deletion_records(gc, block.block)
+        block.deleted_distributions = fetch_deletion_records(gc, block.block)
 
-    #     time.sleep(0.5)
+        time.sleep(0.5)
 
     try:
-        #all_rows = fetch_distribution_records(gc)
-        dist_rows, del_rows = fetch_sheet_records(gc)
+        all_rows = fetch_distribution_records(gc)
         print(f"[SYNC LOG] Fetched {len(all_rows)} rows from Google Sheets.")
     except Exception as e:
         st.sidebar.error(f"❌ Sheet fetch error: {e}")
