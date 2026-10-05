@@ -63,10 +63,11 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                         show_msg = True
                     else:
                         st.error(f"Distribution (ID: {removed_id}) does not exist!")
-                        
+
             if show_msg:
                 st.success(f"Distribution {removed_id} removed!")
-                show_msg = False
+            
+            show_msg = False
 
 if st.sidebar.button("🔄 Fetch Fresh Data"):
     st.cache_data.clear()
