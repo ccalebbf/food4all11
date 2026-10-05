@@ -5,8 +5,11 @@ from sync_updated import data_to_db
 from map import time_to_colour
 
 
-st.markdown(":violet[No Record]")
-st.markdown(":blue[Within 1 week]")
-st.markdown(":green[Between 1 to 2 weeks]")
-st.markdown(":orange[Between 2 to 4 weeks]")
-st.markdown(":red[Over 4 weeks]")
+st.markdown(
+    """
+    <div style="background-color: #0066cc; color: white; padding: 15px; border-radius: 8px;">
+        <strong>Custom Block:</strong> This is a text block with a custom blue background and white text.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
