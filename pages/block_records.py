@@ -43,6 +43,8 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
             st.table(block_data, border="horizontal")
 
+        st.write(block.deleted_distributions)
+        
         with st.popover("Remove a Distribution"):
                 
             removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
@@ -52,8 +54,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                 if removed_id.strip():
 
                     res = block.rem_distribution(removed_id)
-                    st.write(block.deleted_distributions)
-                    
+
                     if res is not None:
                         add_deletion_records(block, removed_id)
                         st.success(f"Distribution {removed_id} removed!")
