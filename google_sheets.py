@@ -62,7 +62,7 @@ def add_deletion_records(block, dist_id):
 
             row = deletion_values[row_index_0]
 
-            if index_with_block_0 >= len(row) and row[index_w_block_0].strip():
+            if index_with_block_0 >= len(row) and row[index_with_block_0].strip():
                 first_empty_row = row_index_0 + 1 # Converting row to 1-based index
                 break
         
@@ -70,8 +70,8 @@ def add_deletion_records(block, dist_id):
             first_empty_row = len(deletion_values) + 1
 
         #Converts 0-based indices to 1-based indices for gspread
-        index_w_block_1 = index_w_block_0 + 1
-        cell_address = rowcol_to_a1(first_empty_row, index_w_block_1)
+        index_with_block_1 = index_with_block_0 + 1
+        cell_address = rowcol_to_a1(first_empty_row, index_with_block_1)
 
         deletion_records.update_acell(cell_address, dist_id)
     except ValueError as e:
