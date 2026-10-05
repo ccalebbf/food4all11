@@ -16,7 +16,7 @@ def get_gspread_client():
     return gspread.service_account(filename = 'food_for_all.json')
 
 # Helper to retrieve Distribution Data
-@st.cache_data(ttl=15, show_spinner = False)
+@st.cache_data(ttl=30, show_spinner = False)
 def fetch_distribution_records(_gc):
     spreadsheet = _gc.open("Food Distribution Logging Form (Responses)")
     distributions_records = spreadsheet.worksheet("Form Responses 2") 
@@ -25,9 +25,9 @@ def fetch_distribution_records(_gc):
 # Helper to retrieve deleted Distribution IDs (Failsafe for site reboots)
     # block - block to obtain deleted records for
     # del_dists - each block's unique PersistentList of deleted IDs
-def fetch_deletion_records(block, del_dists):
-    gc = get_gspread_client()
-    spreadsheet = gc.open("Food Distribution Logging Form (Responses)")
+@st.cache_data(ttl=30, show_spinner = False)
+def fetch_deletion_records(_gc, block):
+    spreadsheet = _gc.open("Food Distribution Logging Form (Responses)")
     deletion_records = spreadsheet.worksheet("DeletedIDs") 
 
     header_cell = deletion_records.find(str(block), in_row = 1)
@@ -36,7 +36,9 @@ def fetch_deletion_records(block, del_dists):
         
         col_values = deletion_records.col_values(header_cell.col)
 
-        del_dists.extend([val for val in col_values[1:] if val.strip()])
+        return [val for val in col_values[1:] if val.strip()]
+
+    return []
 
 
 # Helper to add deleted Distribution IDs to Google Sheet (Failsafe for site reboots)
