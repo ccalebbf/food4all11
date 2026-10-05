@@ -23,7 +23,7 @@ with cols[0]:
     st.markdown(
     """
     <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
-        <strong>Within 1 week</strong>
+        <strong>No Record</strong>
     </div>
     """,
     unsafe_allow_html=True
@@ -34,7 +34,7 @@ with cols[1]:
     #st.markdown(":blue[Within 1 week]")
     st.markdown(
     """
-    <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
+    <div style="background-color: #0077b6; color: white; padding: 15px; border-radius: 8px;">
         <strong>Within 1 week</strong>
     </div>
     """,
@@ -45,7 +45,7 @@ with cols[2]:
     #st.markdown(":green[Between 1 to 2 weeks]")
     st.markdown(
     """
-    <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
+    <div style="background-color: #52a447; color: white; padding: 15px; border-radius: 8px;">
         <strong>Within 1 week</strong>
     </div>
     """,
