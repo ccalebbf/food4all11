@@ -1,7 +1,7 @@
 # -- Page for Individual Block Records --
 
 import streamlit as st
-from google_sheets import get_gspread_client, add_deletion_records
+from google_sheets import get_gspread_client, add_deletion_records, sheets_clear_cache
 from sync_updated import data_to_db
 
 pearl_garden = {98: [460098, [1.334225, 103.939826]], 
@@ -44,7 +44,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
             st.table(block_data, border="horizontal")
 
         st.write(block.deleted_distributions)
-        
+
         with st.popover("Remove a Distribution"):
                 
             removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
@@ -57,6 +57,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
                     if res is not None:
                         add_deletion_records(block, removed_id)
+                        sheets_clear_cache()
                         st.success(f"Distribution {removed_id} removed!")
                         st.rerun()
                     else:
