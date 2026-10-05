@@ -19,7 +19,7 @@ cols = st.columns(5)
 
 with cols[0]:
     #st.markdown("🟣 **No Record**")
-    st.markdown(":violet[No Record]")
+    st.markdown(":indigo[No Record]")
 
 with cols[1]:
     #st.markdown("🔵 **Within 1 week**")
