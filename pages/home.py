@@ -18,19 +18,23 @@ st.text("Legend (time since last distribution)")
 cols = st.columns(5)
 
 with cols[0]:
-    st.markdown("🟣 **No Record**")
+    #st.markdown("🟣 **No Record**")
+    st.markdown(":violet[No Record]")
 
 with cols[1]:
-    st.markdown("🔵 **Within 1 week**")
-
+    #st.markdown("🔵 **Within 1 week**")
+    st.markdown(":blue[Within 1 week]")
 with cols[2]:
-    st.markdown("🟢 **Within 1 to 2 weeks**")
+    #st.markdown("🟢 **Within 1 to 2 weeks**")
+    st.markdown(":green[Between 1 to 2 weeks]")
 
 with cols[3]:
-    st.markdown("🟠 **Within 2 to 4 weeks**")
+    #st.markdown("🟠 **Within 2 to 4 weeks**")
+    st.markdown(":orange[Between 2 to 4 weeks]")
 
 with cols[4]:
-    st.markdown("🔴 **Over 4 weeks**")
+    #st.markdown("🔴 **Over 4 weeks**")
+    st.markdown(":red[Over 4 weeks]")
 
 st.write("")
 
