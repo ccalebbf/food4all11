@@ -41,14 +41,14 @@ def fetch_deletion_records(_gc, block):
     return []
 
 @st.cache_data(ttl=30, show_spinner = False)
-def fetch_sheet_records(_gc, neighbourhood):
+def fetch_sheet_records(_gc, _neighbourhood):
     spreadsheet = _gc.open("Food Distribution Logging Form (Responses)")
     distributions_records = spreadsheet.worksheet("Form Responses 2") 
     deletion_records = spreadsheet.worksheet("DeletedIDs") 
 
     dist_records = distributions_records.get_all_records(numericise_ignore=['all'])
 
-    for block in neighbourhood.blocks:
+    for block in _neighbourhood.blocks:
 
         header_cell = deletion_records.find(str(block.block), in_row = 1)
 
@@ -62,7 +62,7 @@ def fetch_sheet_records(_gc, neighbourhood):
 
             block.deleted_distributions = []
 
-    return dist_records, neighbourhood
+    return dist_records, _neighbourhood
 
 
 # Helper to add deleted Distribution IDs to Google Sheet (Failsafe for site reboots)
