@@ -54,7 +54,7 @@ def create_pg_map():
                         icon = folium.Icon(color = time_to_colour(block.time_since_last_distribution()), 
                                             icon = 'info-sign',
                                             icon_color = 'white')
-                                            )
+                                            
                         ).add_to(m)
 
     return m
