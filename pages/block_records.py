@@ -52,7 +52,8 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                 if removed_id.strip():
 
                     res = block.rem_distribution(removed_id)
-
+                    st.write(block.deleted_distributions)
+                    
                     if res is not None:
                         add_deletion_records(block, removed_id)
                         st.success(f"Distribution {removed_id} removed!")
