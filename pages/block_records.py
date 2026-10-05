@@ -43,8 +43,6 @@ for tab, block in zip(tabs, neighbourhood.blocks):
 
             st.table(block_data, border="horizontal")
 
-        st.write(block.deleted_distributions)
-
         with st.popover("Remove a Distribution"):
                 
             removed_id = st.text_input("Enter Distribution ID: ", key=f"remove_id_{block.block}")
