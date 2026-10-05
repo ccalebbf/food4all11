@@ -16,7 +16,7 @@ def data_to_db(neighbourhood, blocks):
 
     for block in pg.blocks:
 
-        block.deleted_distributions = fetch_deletion_records(_gc, block.block)
+        block.deleted_distributions = fetch_deletion_records(gc, block.block)
 
         time.sleep(1)
 
