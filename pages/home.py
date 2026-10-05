@@ -22,7 +22,7 @@ with cols[0]:
     #st.markdown(":violet[No Record]")
     st.markdown(
     """
-    <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
+    <div style="background-color: #c653b0; color: white; padding: 15px; border-radius: 8px;">
         <strong>No Record</strong>
     </div>
     """,
@@ -34,7 +34,7 @@ with cols[1]:
     #st.markdown(":blue[Within 1 week]")
     st.markdown(
     """
-    <div style="background-color: #0077b6; color: white; padding: 15px; border-radius: 8px;">
+    <div style="background-color: #31a3dc; color: white; padding: 15px; border-radius: 8px;">
         <strong>Within 1 week</strong>
     </div>
     """,
@@ -45,8 +45,8 @@ with cols[2]:
     #st.markdown(":green[Between 1 to 2 weeks]")
     st.markdown(
     """
-    <div style="background-color: #52a447; color: white; padding: 15px; border-radius: 8px;">
-        <strong>Within 1 week</strong>
+    <div style="background-color: #68a922; color: white; padding: 15px; border-radius: 8px;">
+        <strong>Between 1 to 2 weeks</strong>
     </div>
     """,
     unsafe_allow_html=True
@@ -57,8 +57,8 @@ with cols[3]:
     #st.markdown(":orange[Between 2 to 4 weeks]")
     st.markdown(
     """
-    <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
-        <strong>Within 1 week</strong>
+    <div style="background-color: #f48c28; color: white; padding: 15px; border-radius: 8px;">
+        <strong>Between 2 to 4 weeks</strong>
     </div>
     """,
     unsafe_allow_html=True
@@ -69,8 +69,8 @@ with cols[4]:
     #st.markdown(":red[Over 4 weeks]")
     st.markdown(
     """
-    <div style="background-color: #c412bd; color: white; padding: 15px; border-radius: 8px;">
-        <strong>Within 1 week</strong>
+    <div style="background-color: #d63e2b; color: white; padding: 15px; border-radius: 8px;">
+        <strong>Over 4 weeks</strong>
     </div>
     """,
     unsafe_allow_html=True
