@@ -54,11 +54,11 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                     res = block.rem_distribution(removed_id)
 
                     if res is not None:
-                        st.success(f"Distribution {removed_id} removed!")
                         add_deletion_records(block.block, removed_id)
                         st.cache_data.clear()
                         data_to_db.clear()
                         st.rerun()
+                        st.success(f"Distribution {removed_id} removed!")
                     else:
                         st.error(f"Distribution (ID: {removed_id}) does not exist!")
 
