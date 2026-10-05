@@ -57,12 +57,12 @@ class Block():
         return removed_dist
            
     def time_since_last_distribution(self):
-        if self.latest_distribution == None:
+        if not self.latest_distribution:
             return "No Record"
         return (datetime.now(ZoneInfo("Asia/Singapore")).date() - self.latest_distribution.date).days
 
     def display_distributions(self):
-        if self.latest_distribution == None:
+        if not self.latest_distribution:
             print("No Record")
             return
 
@@ -74,7 +74,7 @@ class Block():
             print(f"ID: {dist_id}, {dist.__repr__()}")
 
     def __repr__(self):
-        if self.latest_distribution is None:
+        if not self.latest_distribution:
             ld = "No Record"
             pd = 0
         else:
