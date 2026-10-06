@@ -43,7 +43,7 @@ food4all11/
 └── sync_updated.py
 ```
 
-## Functions of each Files 📜
+## About the Files 📜
 ### models.py
 Contains the Distribution, Block, and Neighbourhood classes, the building blocks of the database. The class hierarchy is as follows.
 <div align="center">
