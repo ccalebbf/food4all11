@@ -69,5 +69,15 @@ Contains functions related to constructing the interactive map of the Pearl Gard
 Contains data_to_db, which processes the raw Google Sheet data into the object database. 
 
 ### app.py
+Main page for Streamlit to run the app.
+
 ### home.py
+Home page of the database, containing the following.
+1. Introduction to the website
+2. Shows summarised map of block records (last distribution, days since last distribution, total distributions)
+3. Link to Google Form to log distributions
+
 ### block_records.py
+Page for individual block records, containing the following.
+1. Table of full distribution records for each block
+2. Removal button for users to delete distributions
