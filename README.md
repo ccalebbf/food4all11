@@ -91,14 +91,30 @@ To adopt this project and run it on your own Streamlit app, you would have to ha
 ## Installation 🔧
 To run this website on Streamlit, you would have to do the following.
 ### Step 1. Set up a Google Form
-
+Do include the following MANDATORY fields in the exact phrasing.
+** Name of organisation** <br>
+Short Answer Text
+**Date of distribution** <br>
+Date
+**Neighbourhood** <br>
+Multiple Choice (in this case, one neighbourhood, 'Pearl Garden')
+**Blocks Covered** <br>
+Checkboxes (with the different blocks in the neighbourhood)
+**Type of Food distributed** <br> 
+Short Answer Text
+**Number of people catered to (estimate)** <br>
+Short Answer Text
+**Number of people catered to (estimate)** <br>
+Short Answer Text
+**Were the food distributed halal certified?** <br>
+Short Answer Text
 ### Step 2: Set Up the Google Sheet
 1. Make a Copy of the Template
 * Open the [Template Google Sheet](https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/).
 * Click **File** > **Make a copy** to save to your own Google Drive.
 2. Note the Sheet URL
 * Copy the new URL of your newly created Google Sheet (or the unique ID from the URL bar).
-
+3. Link the Google Sheet to track responses of the Google Form created in Step 1.
 ### Step 3: Set Up Google Service Account Credentials
 This is to allow the app to read and write data to your Google Sheet.
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
