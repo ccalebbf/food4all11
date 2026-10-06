@@ -90,15 +90,16 @@ To adopt this project and run it on your own Streamlit app, you would have to ha
 
 ## Installation 🔧
 To run this website on Streamlit, you would have to do the following.
+### Step 1. Set up a Google Form
 
-### Step 1: Set Up the Google Sheet
+### Step 2: Set Up the Google Sheet
 1. Make a Copy of the Template
 * Open the [Template Google Sheet](https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/).
 * Click **File** > **Make a copy** to save to your own Google Drive.
 2. Note the Sheet URL
 * Copy the new URL of your newly created Google Sheet (or the unique ID from the URL bar).
 
-### Step 2: Set Up Google Service Account Credentials
+### Step 3: Set Up Google Service Account Credentials
 This is to allow the app to read and write data to your Google Sheet.
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a new project (e.g. food-for-all)
@@ -117,16 +118,30 @@ This is to allow the app to read and write data to your Google Sheet.
 * Open the JSON file downloaded and copy the ```client_email``` address.
 * Go back to the Google Sheet and click **Share**.
 * Paste the ```client_email``` address, give it editor permissions, and save.
-### Step 3: Fork / Clone this Repository
-### Step 4: Configure Streamlit Secrets
+
+### Step 4: Fork / Clone this Repository
+Step 1: Fork the Repository
+* Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account.
+Step 2: Local Deployment (Optional)
+```
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+cd YOUR_REPOSITORY_NAME
+
+# Install dependencies
+pip install -r requirements.txt
+```
 ### Step 5: Deploy to Streamlit Community Cloud
 
+
+### Step 6: Configure Streamlit Secrets
+Be it deployment on Streamlit Cloud or running locally, you must provide your Google Service Account credentials and sheet details via Streamlit Secrets.
 
 ## Usage 🏡
 
 ## Authors 👥 
 * Caleb F. ([@ccalebbf](https://github.com/ccalebbf))
-### Special mention to my lovely teammates!
+### Special mention to my lovely teammates from NTU CNYSP!
 * Chloe T.
 * Darren T.
 * Keira L.
