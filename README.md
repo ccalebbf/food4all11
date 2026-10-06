@@ -62,7 +62,7 @@ Contains all functions related to fetching/writing Google Sheet data.
 Contains functions related to constructing the interactive map of the Pearl Garden neighbourhood.
 | Function | Description |
 | :--- | :--- |
-| `time_to_colour` | Categorises the time since last distribution (of every block) into different colours. |
+| `time_to_colour` | Maps the time since last distribution (of every block) to their representative colours.  |
 | `create_pg_map` | Creates the map object. |
 
 ### sync_updated.py
