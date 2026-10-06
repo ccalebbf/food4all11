@@ -49,7 +49,15 @@ Contains the Distribution, Block, and Neighbourhood classes, the building blocks
 <div align="center">
 <img src="images/class_diagram.png" alt="Descriptive Alt Text" width="30%">
 </div>
+
 ### google_sheets.py
+Contains all functions related to fetching/writing Google Sheet data.
+```
+# Establishes connection between the Google Sheet and the Streamlit app
+get_gspread_client()
+
+fetch_sheet_records() fetches
+```
 ### map.py
 ### sync_updated.py
 ### app.py
