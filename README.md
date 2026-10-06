@@ -13,5 +13,9 @@ Welcome! This is the GitHub repository responsible for running the codes behind 
 
 ## What the Individual Files are for
 ### models.py
+
 ### google_sheets.py
 ### map.py
+### sync_updated.py
+### pages/home.py
+### pages/block_records.py
