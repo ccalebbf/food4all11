@@ -83,14 +83,17 @@ Page for individual block records, containing the following.
 2. Removal button for users to delete distributions
 
 ## Prerequisites
-To adopt this project and run it on your own Streamlit app, you would have to do the following.
+To adopt this project and run it on your own Streamlit app, you would have to have the following.
 * A Google Account (for Google Sheets and Google Cloud Console)
 * A GitHub Account
 * A Streamlit Community Cloud Account (connected to the GitHub Account)
 
 ## Installation 🔧
-To run this website on Streamlit, all you would have to do 
+To run this website on Streamlit, you would have to do the following.
 ### Step 1: Set Up the Google Sheet
+1. Make a Copy of the Template
+* Open the ([Template Google Sheet](https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/))
+* Click File -> Make a copy to save to your own Google Drive
 ### Step 2: Set Up Google Service Account
 ### Step 3: Fork / Clone this Repository
 ### Step 4: Configure Streamlit Secrets
