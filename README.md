@@ -47,7 +47,7 @@ food4all11/
 ### models.py
 Contains the Distribution, Block, and Neighbourhood classes, the building blocks of the database.
 <div align="center">
-<img src="images/class_diagram.jpeg" alt="Descriptive Alt Text" width="50%">
+<img src="images/class_diagram.png" alt="Descriptive Alt Text" width="50%">
 </div>
 ### google_sheets.py
 ### map.py
