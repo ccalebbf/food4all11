@@ -90,11 +90,33 @@ To adopt this project and run it on your own Streamlit app, you would have to ha
 
 ## Installation 🔧
 To run this website on Streamlit, you would have to do the following.
+
 ### Step 1: Set Up the Google Sheet
 1. Make a Copy of the Template
-* Open the ([Template Google Sheet](https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/))
-* Click File -> Make a copy to save to your own Google Drive
-### Step 2: Set Up Google Service Account
+* Open the [Template Google Sheet](https://docs.google.com/spreadsheets/d/1SuHBT_VcTySORDLElq1XTv3VRwXIOijrekMGioCqxzc/).
+* Click **File** > **Make a copy** to save to your own Google Drive.
+2. Note the Sheet URL
+* Copy the new URL of your newly created Google Sheet (or the unique ID from the URL bar).
+
+### Step 2: Set Up Google Service Account Credentials
+This is to allow the app to read and write data to your Google Sheet.
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project (e.g. food-for-all)
+3. Enable **Google Sheets API** and **Google Drive API**:
+* Navigate to **APIs & Services** > **Library**.
+* Search for both **Google Sheets API** and **Google Drive API** > click Enable.
+4. Create a Service Account:
+* Go to **APIs & Services** > **Credentials**.
+* Click **Create Credentials** > **Service Account**.
+* Name your service account, click **Create and Continue**, then **Done**.
+5. Generate a Key:
+* Click on the created service account and go to the **Keys** tab.
+* Click **Add Key** > **Create New Key**.
+* Select **JSON** and download the file. Keep this secure!
+6. Share the Sheet with the Service Account:
+* Open the JSON file downloaded and copy the ```client_email``` address.
+* Go back to the Google Sheet and click **Share**.
+* Paste the ```client_email``` address, give it editor permissions, and save.
 ### Step 3: Fork / Clone this Repository
 ### Step 4: Configure Streamlit Secrets
 ### Step 5: Deploy to Streamlit Community Cloud
