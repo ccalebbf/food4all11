@@ -109,6 +109,7 @@ Do include the following MANDATORY fields in the exact phrasing. <br>
 2. Note the Sheet URL
 * Copy the new URL of your newly created Google Sheet (or the unique ID from the URL bar).
 3. Link the Google Sheet to track responses of the Google Form created in Step 1.
+
 ### Step 3: Set Up Google Service Account Credentials
 This is to allow the app to read and write data to your Google Sheet.
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
@@ -141,11 +142,32 @@ cd YOUR_REPOSITORY_NAME
 # Install dependencies
 pip install -r requirements.txt
 ```
-### Step 5: Deploy to Streamlit Community Cloud
+### Step 5: Configure Streamlit Secrets
+Be it deployment on Streamlit Cloud or running locally, you must provide your Google Service Account credentials and sheet details via Streamlit Secrets. The required format (```secrets.toml```) is as such.
+```
+# URL or ID of your Google Sheet
+spreadsheet = "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit"
 
-
-### Step 6: Configure Streamlit Secrets
-Be it deployment on Streamlit Cloud or running locally, you must provide your Google Service Account credentials and sheet details via Streamlit Secrets.
+[gcp_service_account]
+type = "service_account"
+project_id = "YOUR_PROJECT_ID"
+private_key_id = "YOUR_PRIVATE_KEY_ID"
+private_key = "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n"
+client_email = "YOUR_SERVICE_ACCOUNT_EMAIL@YOUR_PROJECT.iam.gserviceaccount.com"
+client_id = "YOUR_CLIENT_ID"
+auth_uri = "https://accounts.google.com/o/oauth2/auth"
+token_uri = "https://oauth2.googleapis.com/token"
+auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/YOUR_SERVICE_ACCOUNT_EMAIL"
+```
+Note: Copy the field values directly from the JSON file downloaded in Step 3. Keep the quotes around strings, and preserve line breaks (\n) in ```private_key```.
+### Step 6: Deploy to Streamlit Community Cloud
+1. Log in to [Streamlit Community Cloud](https://share.streamlit.io/).
+2. Click **New app**.
+3. Select your GitHub repository, branch (e.g. ```main```), and main file path (e.g. ```app.py```).
+4. Click **Advanced settings...** before deploying.
+5. Paste formatted secrets (from Step 5) into the **Secrets** text field.
+6. Click Deploy!
 
 ## Usage 🏡
 
