@@ -88,3 +88,4 @@ Page for individual block records, containing the following.
 
 ## Authors 👥 
 * Caleb F. ([@ccalebbf](https://github.com/ccalebbf))
+Special thanks to my group mates, Darren T., Chloe T., Keira L., Sigmund K., and Zeke N. for their contributions as well!
