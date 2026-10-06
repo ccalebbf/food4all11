@@ -85,3 +85,6 @@ Page for individual block records, containing the following.
 ## Installation 🔧
 
 ## Usage 🏡
+
+## Authors 👥 
+** Caleb F. ** - [@ccalebbf](https://github.com)
