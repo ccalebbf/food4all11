@@ -82,7 +82,19 @@ Page for individual block records, containing the following.
 1. Table of full distribution records for each block
 2. Removal button for users to delete distributions
 
+## Prerequisites
+* A Google Account (for Google Sheets and Google Cloud Console)
+* A GitHub Account
+* A Streamlit Community Cloud Account (connected to the GitHub Account)
+
 ## Installation 🔧
+To run this website on Streamlit, all you would have to do 
+### Step 1: Set Up the Google Sheet
+### Step 2: Set Up Google Service Account
+### Step 3: Fork / Clone this Repository
+### Step 4: Configure Streamlit Secrets
+### Step 5: Deploy to Streamlit Community Cloud
+
 
 ## Usage 🏡
 
