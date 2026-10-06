@@ -7,12 +7,12 @@ class Distribution():
     def __init__(self, org, date, typ, pax, isHalal):
         self.org = org
         self.date = datetime.strptime(date, "%Y-%m-%d").date()
-        self.type = typ
+        self.typ = typ
         self.pax = pax
         self.isHalal = isHalal
         
     def __repr__(self):
-        return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.type}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
+        return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.typ}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
 
 class Block():
     def __init__(self, block, postcode, coordinates):

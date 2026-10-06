@@ -36,7 +36,7 @@ for tab, block in zip(tabs, neighbourhood.blocks):
                 "Distribution ID" : [key for key in sorted_distributions],
                 "Date" : [value.date for value in sorted_distributions.values()],
                 "Organisation" : [value.org for value in sorted_distributions.values()],
-                "Type" : [value.type for value in sorted_distributions.values()],
+                "Type" : [value.typ for value in sorted_distributions.values()],
                 "Number of People (Approx.)" : [value.pax for value in sorted_distributions.values()],
                 "Halal-Certified" : [value.isHalal for value in sorted_distributions.values()]
             }
