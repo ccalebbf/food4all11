@@ -45,7 +45,7 @@ food4all11/
 
 ## Functions of each Files 📜
 ### models.py
-Contains the Distribution, Block, and Neighbourhood classes, the building blocks of the database. The class heirarchy is as follows.
+Contains the Distribution, Block, and Neighbourhood classes, the building blocks of the database. The class hierarchy is as follows.
 <div align="center">
 <img src="images/class_diagram.png" alt="Descriptive Alt Text" width="30%">
 </div>
