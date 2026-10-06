@@ -23,15 +23,13 @@ class Block():
         self.distributions = {}
         self.deleted_distributions = []
 
-    def log_distribution(self, dist_id, distribution):
-        
+    def log_distribution(self, dist_id, distribution): 
         self.distributions[dist_id] = distribution
 
         if (self.latest_distribution is None or distribution.date >= self.latest_distribution.date):
             self.latest_distribution = distribution
 
     def rem_distribution(self, dist_id):
-
         if dist_id not in self.distributions:
             return
         
@@ -51,18 +49,6 @@ class Block():
             return "No Record"
         return (datetime.now(ZoneInfo("Asia/Singapore")).date() - self.latest_distribution.date).days
 
-    def display_distributions(self):
-        if not self.latest_distribution:
-            print("No Record")
-            return
-
-        print(f"Food Distribution Records of Block {self.block}")
-
-        sorted_dists = dict(sorted(self.distributions.items(), key = lambda item: item[1].date)) 
-
-        for dist_id, dist in sorted_dists.items():
-            print(f"ID: {dist_id}, {dist.__repr__()}")
-
     def __repr__(self):
         if not self.latest_distribution:
             ld = "No Record"
@@ -78,7 +64,5 @@ class Neighbourhood():
         self.name = name
         self.blocks = blocks
 
-    def display_blocks(self):
-        print(f"Blocks in {self.name}")
-        for i in range(len(self.blocks)):
-            print(self.blocks[i])
+    def __repr__(self):
+        return(f"[Neighbourhood: {self.name}, Blocks: {[block.block for block in blocks]}]")
