@@ -1,4 +1,4 @@
-# Food for All Database 🏡
+# Food for All Database
 
 Welcome! This is the GitHub repository responsible for running the codes behind the Food Distribution Database, a real-time tracker for food aid efforts conducted at the Pearl Garden neighbourhood in Bedok.
 
@@ -81,3 +81,7 @@ Home page of the database, containing the following.
 Page for individual block records, containing the following.
 1. Table of full distribution records for each block
 2. Removal button for users to delete distributions
+
+## Installation 🔧
+
+## Usage 🏡
