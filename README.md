@@ -126,7 +126,7 @@ This is to allow the app to read and write data to your Google Sheet.
 
 ## Authors 👥 
 * Caleb F. ([@ccalebbf](https://github.com/ccalebbf))
-Special mention to my lovely teammates!
+### Special mention to my lovely teammates!
 * Chloe T.
 * Darren T.
 * Keira L.
