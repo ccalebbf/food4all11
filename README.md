@@ -57,8 +57,17 @@ Contains all functions related to fetching/writing Google Sheet data.
 | `get_gspread_client` | Establishes connection between Google Sheets and the Streamlit web app. |
 | `fetch_sheet_records` | Fetches Google Sheet records in order to build the database. |
 | `add_deletion_records` | Writes deleted distribution IDs (from the web app's Distribution Removal feature) into a separate sheet. |
+
 ### map.py
+Contains functions related to constructing the interactive map of the Pearl Garden neighbourhood.
+| Function | Description |
+| :--- | :--- |
+| `time_to_colour` | Categorises the time since last distribution (of every block) into different colours. |
+| `create_pg_map` | Creates the map object. |
+
 ### sync_updated.py
+Contains data_to_db, which processes the raw Google Sheet data into the object database. 
+
 ### app.py
 ### home.py
 ### block_records.py
