@@ -89,7 +89,7 @@ Page for individual block records, containing the following.
 ## Authors 👥 
 * Caleb F. ([@ccalebbf](https://github.com/ccalebbf))
 ### Special Mentions
-Shout out to my lovely teammates for their contributions as well!
+Shout out to my lovely teammates!
 * Chloe T.
 * Darren T.
 * Keira L.
