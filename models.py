@@ -12,9 +12,6 @@ class Distribution():
         self.type = type
         self.pax = pax
         self.isHalal = isHalal
-    
-    # def __setstate__(self, state):
-    #     super().__setstate__(state)
         
     def __repr__(self):
         return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.type}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
@@ -29,9 +26,6 @@ class Block():
         self.latest_distribution = None
         self.distributions = {}
         self.deleted_distributions = []
-
-    # def __setstate__(self, state):
-    #     super().__setstate__(state)
 
     def log_distribution(self, dist_id, distribution):
         
