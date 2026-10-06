@@ -65,4 +65,4 @@ class Neighbourhood():
         self.blocks = blocks
 
     def __repr__(self):
-        return(f"[Neighbourhood: {self.name}, Blocks: {[block.block for block in blocks]}]")
+        return(f"[Neighbourhood: {self.name}, Blocks: {[block.block for block in self.blocks]}]")
