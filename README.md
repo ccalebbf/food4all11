@@ -45,6 +45,10 @@ food4all11/
 
 ## Functions of each Files 📜
 ### models.py
+Contains the Distribution, Block, and Neighbourhood classes, the building blocks of the database.
+<div align="center">
+<img src="images/class_diagram.jpeg" alt="Descriptive Alt Text" width="50%">
+</div>
 ### google_sheets.py
 ### map.py
 ### sync_updated.py
