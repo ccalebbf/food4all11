@@ -87,4 +87,4 @@ Page for individual block records, containing the following.
 ## Usage 🏡
 
 ## Authors 👥 
-* ** Caleb F. ** - [@ccalebbf](https://github.com)
+* Caleb F. - [@ccalebbf](https://github.com)
