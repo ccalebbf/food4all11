@@ -54,16 +54,16 @@ Contains the Distribution, Block, and Neighbourhood classes, the building blocks
 Contains all functions related to fetching/writing Google Sheet data.
 ```
 get_gspread_client
+# Establishes connection between the Google Sheet and the Streamlit web app.
 ```
-Establishes connection between the Google Sheet and the Streamlit web app.
 ```
 fetch_sheet_records
+# Fetches Google Sheet records in order to build the database
 ```
-Fetches Google Sheet records in order to build the database
 ```
 add_deletion_records
+# Writes deleted distribution IDs (from the web app's Distribution Removal feature) into a separate Google Sheet
 ```
-Writes deleted distribution IDs (from the web app's Distribution Removal feature) into a separate Google Sheet
 ### map.py
 ### sync_updated.py
 ### app.py
