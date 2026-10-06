@@ -4,7 +4,7 @@ Welcome! This is the GitHub repository responsible for running the codes behind 
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://foodforall11.streamlit.app/)
 
-![Descriptive Alt Text](images/bags.jpeg)
+<img src="images/bags.jpeg" alt="Descriptive Alt Text" width="50%">
 
 ## How it Works - a brief summary
 1. Food Distribution records are recorded via a Google Form which is then transferred to a Google Sheet.
