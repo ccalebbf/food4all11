@@ -92,23 +92,15 @@ To adopt this project and run it on your own Streamlit app, you would have to ha
 To run this website on Streamlit, you would have to do the following.
 ### Step 1. Set up a Google Form
 Do include the following MANDATORY fields in the exact phrasing. <br>
-** Name of organisation** <br>
-Short Answer Text <br>
-**Date of distribution** <br>
-Date <br>
-**Neighbourhood** <br>
-Multiple Choice (in this case, one neighbourhood, 'Pearl Garden') <br>
-**Blocks Covered** <br>
-Checkboxes (with the different blocks in the neighbourhood) <br>
-**Type of Food distributed** <br> 
-Short Answer Text <br>
-**Number of people catered to (estimate)** <br>
-Short Answer Text <br>
-**Number of people catered to (estimate)** <br>
-Short Answer Text <br>
-**Were the food distributed halal certified?** <br>
-Short Answer Text <br>
-
+| Field | Type |
+| :--- | :--- |
+| Name of organisation | Short Answer Text |
+| Date of distribution | Date |
+| Neighbourhood | Multiple Choice (One neighbourhood, 'Pearl Garden' in this case) |
+| Blocks Covered | Checkboxes (with the different blocks in the neighbourhood) |
+| Type of Food distributed | Short Answer Text |
+| Number of people catered to (estimate) | Short Answer Text |
+| Were the food distributed halal certified? | Short Answer Text |
 
 ### Step 2: Set Up the Google Sheet
 1. Make a Copy of the Template
