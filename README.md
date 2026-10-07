@@ -131,8 +131,9 @@ This is to allow the app to read and write data to your Google Sheet.
 * Paste the ```client_email``` address, give it editor permissions, and save.
 
 ### Step 4: Fork / Clone this Repository
-Step 1: Fork the Repository: Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account. <br>
-Step 2: Local Deployment (Optional)
+1. Fork the Repository:
+* Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account. 
+2. Local Deployment (Optional)
 ```
 # Clone your fork
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
