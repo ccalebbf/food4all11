@@ -4,6 +4,7 @@ import gspread
 from gspread.utils import rowcol_to_a1
 
 # Establish Connection with the Google Sheets
+@st.cache_resource(show_spinner=False)
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
         try:
@@ -15,7 +16,7 @@ def get_gspread_client():
             print(f"Failed to load, {e}")
     return gspread.service_account(filename = 'food_for_all.json')
 
-@st.cache_data(ttl=30, show_spinner = False)
+@st.cache_data(ttl=300, show_spinner = False)
 def fetch_sheet_records(_gc, _neighbourhood):
     spreadsheet = _gc.open("Food Distribution Logging Form (Responses)")
     distributions_records = spreadsheet.worksheet("Form Responses 2") 
