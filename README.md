@@ -132,7 +132,8 @@ This is to allow the app to read and write data to your Google Sheet.
 
 ### Step 4: Fork / Clone this Repository
 Step 1: Fork the Repository
-* Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account.<br>
+* Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account.
+<br>
 Step 2: Local Deployment (Optional)
 ```
 # Clone your fork
