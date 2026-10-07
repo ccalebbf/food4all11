@@ -143,6 +143,7 @@ cd YOUR_REPOSITORY_NAME
 # Install dependencies
 pip install -r requirements.txt
 ```
+
 ### Step 5: Configure Streamlit Secrets
 Be it deployment on Streamlit Cloud or running locally, you must provide your Google Service Account credentials and sheet details via Streamlit Secrets. The required format (```secrets.toml```) is as such.
 ```
