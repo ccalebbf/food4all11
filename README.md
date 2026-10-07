@@ -174,7 +174,8 @@ Note: Copy the field values directly from the JSON file downloaded in Step 3. Ke
 
 ## Authors 👥 
 * Caleb F. ([@ccalebbf](https://github.com/ccalebbf))
-### Special mention to my lovely teammates from NTU CNYSP!
+### Special Mentions
+Huge thanks to my lovely teammates from NTU CNYSP (NH0001 Team 11) for their support!
 * Chloe T.
 * Darren T.
 * Keira L.
