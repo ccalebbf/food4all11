@@ -38,7 +38,7 @@ def data_to_db(neighbourhood, blocks):
                     new_dist = Distribution(row["Name of organisation"], 
                                             row["Date of distribution"], 
                                             row["Type of Food distributed"], 
-                                            row["Number of people catered to (estimate)"], 
+                                            row["Number of residents catered to (estimate)"], 
                                             row["Were the food distributed halal certified?"])
                     block.log_distribution(dist_id, new_dist)
                     print(f"[DIAGNOSTIC] Prepared distribution '{dist_id}' for Block {block.block}")

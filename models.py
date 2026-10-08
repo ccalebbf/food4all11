@@ -12,7 +12,7 @@ class Distribution():
         self.isHalal = isHalal
         
     def __repr__(self):
-        return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.typ}, Number of People (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
+        return (f"[Organisation: {self.org}, Date: {self.date}, Type: {self.typ}, Number of Residents (Approx.): {self.pax}, Halal-Certified: {self.isHalal}]")
 
 class Block():
     def __init__(self, block, postcode, coordinates):
