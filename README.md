@@ -180,14 +180,14 @@ Note: Copy the field values directly from the JSON file downloaded in Step 3. Ke
 This is done through the Google Form on the Home Page! The Google Form link is attached under the header that says "Log Distribution Here".
 
 <div align="center">
-<img src="images/log_distribution.png" alt="Descriptive Alt Text" width="50%">
+<img src="images/log_distribution.png" alt="Descriptive Alt Text" width="75%">
 </div>
 
 ### Removing a distribution
 This is done through the "Remove a Distribution" feature on the Block Records Page! Navigate to the desired block, and enter the Distribution ID of the Distribution you wish to remove.
 
 <div align="center">
-<img src="images/remove_distribution.png" alt="Descriptive Alt Text" width="50%">
+<img src="images/remove_distribution.png" alt="Descriptive Alt Text" width="75%">
 </div>
 
 ### Resetting all distributions (done by app host only)
@@ -198,7 +198,7 @@ This is done through the Google Form.
 Delete all rows **below the header row** on the sheet that tracks Google Form responses.
 
 <div align="center">
-<img src="images/reset_distributions.png" alt="Descriptive Alt Text" width="50%">
+<img src="images/reset_distributions.png" alt="Descriptive Alt Text" width="75%">
 </div>
 
 **For the Deletion Records**
@@ -206,7 +206,7 @@ Delete all rows **below the header row** on the sheet that tracks Google Form re
 Delete all entries **below the header row** on the sheet that stores deleted Distribution IDs.
 
 <div align="center">
-<img src="images/reset_deletions.png" alt="Descriptive Alt Text" width="50%">
+<img src="images/reset_deletions.png" alt="Descriptive Alt Text" width="75%">
 </div>
 
 ## Authors 👥 
