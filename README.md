@@ -171,6 +171,20 @@ Note: Copy the field values directly from the JSON file downloaded in Step 3. Ke
 6. Click Deploy!
 
 ## Usage 🏡
+### Logging a distribution
+This is done through the Google Form on the Home Page! The Google Form link is attached under the header that says "Log Distribution Here".
+### Removing a distribution
+This is done through the "Remove a Distribution" feature on the Block Records Page! Navigate to the desired block, and enter the Distribution ID of the Distribution you wish to remove.
+### Resetting all distributions (done by app host only)
+This is done through the Google Form.
+
+**For the Distribution Records**
+
+Delete all rows **below the header row** on the sheet that tracks Google Form responses.
+
+**For the Deletion Records**
+
+Delete all entries **below the header row** on the sheet that stores deleted Distribution IDs.
 
 ## Authors 👥 
 * Caleb F. ([@ccalebbf](https://github.com/ccalebbf))
