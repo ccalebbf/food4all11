@@ -94,6 +94,7 @@ To adopt this project and run it on your own Streamlit app, you would have to ha
 
 ## Installation 🔧
 To run this website on Streamlit, you would have to do the following.
+
 ### Step 1. Set up a Google Form
 Do include the following MANDATORY fields in the exact phrasing. <br>
 | Field | Type |
@@ -115,29 +116,43 @@ Do include the following MANDATORY fields in the exact phrasing. <br>
 3. Link the Google Sheet to track responses of the Google Form created in Step 1.
 
 ### Step 3: Set Up Google Service Account Credentials
+
 This is to allow the app to read and write data to your Google Sheet.
+
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+  
 2. Create a new project (e.g. food-for-all)
+  
 3. Enable **Google Sheets API** and **Google Drive API**:
+   
 * Navigate to **APIs & Services** > **Library**.
 * Search for both **Google Sheets API** and **Google Drive API** > click Enable.
+  
 4. Create a Service Account:
+
 * Go to **APIs & Services** > **Credentials**.
 * Click **Create Credentials** > **Service Account**.
 * Name your service account, click **Create and Continue**, then **Done**.
+
 5. Generate a Key:
+
 * Click on the created service account and go to the **Keys** tab.
 * Click **Add Key** > **Create New Key**.
 * Select **JSON** and download the file. Keep this secure!
+
 6. Share the Sheet with the Service Account:
 * Open the JSON file downloaded and copy the ```client_email``` address.
 * Go back to the Google Sheet and click **Share**.
 * Paste the ```client_email``` address, give it editor permissions, and save.
 
 ### Step 4: Fork / Clone this Repository
+
 1. Fork the Repository:
-* Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account. 
+
+* Click the **Fork** button at the top-right of this GitHub repository to create a copy under your account.
+
 2. Local Deployment (Optional)
+
 ```
 # Clone your fork
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
@@ -148,6 +163,7 @@ pip install -r requirements.txt
 ```
 
 ### Step 5: Configure Streamlit Secrets
+
 Be it deployment on Streamlit Cloud or running locally, you must provide your Google Service Account credentials and sheet details via Streamlit Secrets. The required format (```secrets.toml```) is as such.
 ```
 # URL or ID of your Google Sheet
