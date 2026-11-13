@@ -48,7 +48,7 @@ food4all11/
 ```
 
 ## About the Files 📜
-### models.py
+### ```models.py```
 Contains the Distribution, Block, and Neighbourhood classes, the building blocks of the database. The class hierarchy is as follows.
 <div align="center">
 <img src="images/class_diagram.png" alt="Descriptive Alt Text" width="30%">
@@ -70,7 +70,7 @@ Contains functions related to constructing the interactive map of the Pearl Gard
 | `create_pg_map` | Creates the map object. |
 
 ### sync_updated.py
-Contains data_to_db, which processes the raw Google Sheet data into the object database. 
+Contains ```data_to_db```, which processes the raw Google Sheet data into the object database. 
 
 ### app.py
 Main page for Streamlit to run the app.
