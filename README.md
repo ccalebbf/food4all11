@@ -209,7 +209,7 @@ This is done through the "Remove a Distribution" feature on the Block Records Pa
 ### Resetting all distributions (done by app host only)
 This is done through the Google Form.
 
-**Distribution Records**
+#### Distribution Records
 
 Delete all rows **below the header row** on the sheet that tracks Google Form responses.
 
@@ -217,7 +217,7 @@ Delete all rows **below the header row** on the sheet that tracks Google Form re
 <img src="images/reset_distributions.png" alt="Descriptive Alt Text" width="75%">
 </div>
 
-**Deletion Records**
+#### Deletion Records
 
 Delete all entries **below the header row** on the sheet that stores deleted Distribution IDs.
 
