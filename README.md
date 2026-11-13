@@ -54,7 +54,7 @@ Contains the Distribution, Block, and Neighbourhood classes, the building blocks
 <img src="images/class_diagram.png" alt="Descriptive Alt Text" width="30%">
 </div>
 
-### google_sheets.py
+### ```google_sheets.py```
 Contains all functions related to fetching/writing Google Sheet data.
 | Function | Description |
 | :--- | :--- |
@@ -62,26 +62,26 @@ Contains all functions related to fetching/writing Google Sheet data.
 | `fetch_sheet_records` | Fetches Google Sheet records in order to build the database. |
 | `add_deletion_records` | Writes deleted distribution IDs (from the web app's Distribution Removal feature) into a separate sheet. |
 
-### map.py
+### ```map.py```
 Contains functions related to constructing the interactive map of the Pearl Garden neighbourhood.
 | Function | Description |
 | :--- | :--- |
 | `time_to_colour` | Maps the time since last distribution (of every block) to their representative colours.  |
 | `create_pg_map` | Creates the map object. |
 
-### sync_updated.py
+### ```sync_updated.py```
 Contains ```data_to_db```, which processes the raw Google Sheet data into the object database. 
 
-### app.py
+### ```app.py```
 Main page for Streamlit to run the app.
 
-### home.py
+### ```home.py```
 Home page of the database, containing the following.
 1. Introduction to the website
 2. Shows summarised map of block records (last distribution, days since last distribution, total distributions)
 3. Link to Google Form to log distributions
 
-### block_records.py
+### ```block_records.py```
 Page for individual block records, containing the following.
 1. Table of full distribution records for each block
 2. Removal button for users to delete distributions
